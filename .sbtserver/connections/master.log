@@ -1,0 +1,7 @@
+New log file opened at Thu Dec 03 23:02:41 PST 2015 by 25229@Sravyas-MacBook-Pro.local
+Taking next connection to: 52047
+New client attempting to connect on port: 52048-52047
+  Address = /10.0.0.100:52047
+This client on port 52048 has uuid fdeda505-8658-4692-bfc8-85891e018da0 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: play-fork-run-fdeda505-8658-4692-bfc8-85891e018da0
+Taking next connection to: 52047

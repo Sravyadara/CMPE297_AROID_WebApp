@@ -1,0 +1,4 @@
+[0m[[31merror[0m] [0m/Users/sravyadara/Documents/Softwares/activator-dist-1.3.7/cmpe297/app/views/index.scala.html:242: not found: value mail[0m
+[0m[[31merror[0m] [0m	      <p><span class="glyphicon glyphicon-envelope"></span>Email: mail@mail.com</p> [0m
+[0m[[31merror[0m] [0m	                                                                       ^[0m
+[0m[[31merror[0m] [0mone error found[0m

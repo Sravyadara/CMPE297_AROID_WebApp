@@ -1,0 +1,274 @@
+@(message: String)
+
+@main("AROID:Explore,Visualize") {
+
+  <nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">AROID</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#myPage">HOME</a></li>
+        <li><a href="#services">SERVICES</a></li>
+        <li><a href="#gallery">PRODUCT GALLERY</a></li>
+        <li><a href="#contact">CONTACT US</a></li>
+        <li><a href="#login">LOGIN</a></li>
+          </ul>
+        </li>
+      </ul>
+	    </div>
+	  </div>
+	</nav>
+	<!------navigation bar ends -------->
+	
+	<!------Background Image scrolling-------->
+	 <div id="myCarousel" class="carousel slide" data-ride="carousel">
+	    <!-- Indicators -->
+	    <ol class="carousel-indicators">
+	      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+	      <li data-target="#myCarousel" data-slide-to="1"></li>
+	      <li data-target="#myCarousel" data-slide-to="2"></li>
+	     
+	    </ol>
+	
+	    <!-- Wrapper for slides -->
+	    <div class="carousel-inner" role="listbox">
+	      <div class="item active">
+	        <img src="@routes.Assets.versioned("images/img/image1.jpg")" alt="New York" width="1200" height="700">
+	        <div class="carousel-caption">
+	          <h3>Make the life simple with stylish and functional home solutions - Wayfair.</h3>
+	        </div>      
+	      </div>
+	
+	      <div class="item">
+	        <img src="@routes.Assets.versioned("images/img/image2.jpg")" alt="Chicago" width="1200" height="700">
+	        <div class="carousel-caption">
+	          <h3>Plan Before You Shop - IKEA</h3>
+	        </div>      
+	      </div>
+	    
+	      <div class="item">
+	        <img src="@routes.Assets.versioned("images/img/patio1.jpg")" alt="Los Angeles" width="1200" height="700">
+	        <div class="carousel-caption">
+	          <h3>Discover how we comfort your living - la-Z-boy</h3>
+	        </div>      
+	      </div>
+	    </div>
+	    
+	  
+	
+	    <!-- Left and right controls -->
+	    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+	      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+	      <span class="sr-only">Previous</span>
+	    </a>
+	    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+	      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+	      <span class="sr-only">Next</span>
+	    </a>
+	 </div>
+	
+	
+	
+	
+	<!---------Services----->
+	<div class= "container text-center">
+	  <h3>Services Offered...</h3>
+	  <p><em>We love music!</em></p>
+	 <br>
+	 <div id="services" class="row slideanim">
+	    <div class="col-sm-4">
+	      <p class= "text-center"><strong>CAR FINDER</strong></p><br>
+	      <a href="#demo1" data-toggle="collapse">
+	      <img src="@routes.Assets.versioned("images/img/car.jpg")" class="img-circle person" alt="Random Name">
+	      </a>
+	      <div id="demo1" class="collapse">
+	      <p>Save the location of your car</p>
+	      <p>Go for a walk</p>
+	      <p>Get the directions for your car</p>
+	    </div>
+	    </div>
+	    <div class="col-sm-4">
+	      <p class= "text-center"><strong>LOCATE RESTAURANTS</strong></p><br>
+	      <a href="#demo2" data-toggle="collapse">
+	      <img src="@routes.Assets.versioned("images/img/food1.jpg")"class="img-circle person" alt="Random Name">
+	      </a>
+	       <div id="demo2" class="collapse">
+	      <p>Get nearby restaurants on your mobile screen</p>
+	      <p>Check their reviews and rating</p>
+	      <p>Check in to the restaurant of your choice</p>
+	    </div>
+	    </div>
+	    <div class="col-sm-4">
+	      <p class = "text-center"><strong>PRODUCT CATALOG</strong></p><br>
+	       <a href="#demo3" data-toggle="collapse">
+	      <img src="@routes.Assets.versioned("images/img/room.jpg")" class="img-circle person" alt="Random Name">
+	      </a>
+	       <div id="demo3" class="collapse">
+	      <p>Product Catalog with products from various retailers</p>
+	      <p>View the products</p>
+	      <p>Scan the QRCode with your mobile to visualize</p>
+	    </div>
+	    </div>
+	  </div>
+	</div>
+	
+	<!------Services-------->
+	
+	<!------Product gallery-------->
+	
+	
+	<div id="gallery" class ="bg-1">
+	<div class = "container">
+	<h3 class = "text-center"> PRODUCT GALLERY</h3>
+	<br>
+	<br>
+	<div class="row text-center slideanim">
+	  <div class="col-sm-4">
+	    <div class="thumbnail">
+	      <img src="@routes.Assets.versioned("images/img/portfolio_pic6.jpg")" alt="Paris">
+	    </div>
+	  </div>
+ 
+	  <div class="col-sm-4">
+	    <div class="thumbnail">
+	      <img src="@routes.Assets.versioned("images/img/portfolio_pic5.jpg")" alt="Paris">
+	    </div>
+	  </div>
+	  
+	  
+	  
+	  <div class="col-sm-4">
+	    <div class="thumbnail">
+	      <img src="@routes.Assets.versioned("images/img/portfolio_pic7.jpg")" alt="Paris">
+	    </div>
+	  </div>
+	  </div>
+	  
+	  
+	  <div class="row text-center slideanim">
+	  <div class="col-sm-4">
+	    <div class="thumbnail">
+	      <img src="@routes.Assets.versioned("images/img/1.jpg")" alt="Paris">
+	    </div>
+	  </div>
+	  
+	  
+	  
+	  <div class="col-sm-4">
+	    <div class="thumbnail">
+	      <img src="@routes.Assets.versioned("images/img/2.jpg")" alt="Paris">
+	    </div>
+	  </div>
+	  
+	  
+	  
+	  <div class="col-sm-4">
+	    <div class="thumbnail">
+	      <img src="@routes.Assets.versioned("images/img/3.jpg")" alt="Paris">
+	    </div>
+	  </div>
+	  </div>
+	  
+	  <div class="row text-center slideanim">
+	  <div class="col-sm-4">
+	    <div class="thumbnail">
+	      <img src="@routes.Assets.versioned("images/img/portfolio_pic2.jpg")" alt="Paris">
+	    </div>
+	  </div>
+	  
+	  
+	  
+	  <div class="col-sm-4">
+	    <div class="thumbnail">
+	      <img src="@routes.Assets.versioned("images/img/portfolio_pic3.jpg")" alt="Paris">
+	    </div>
+	  </div>
+	  
+	  
+	  
+	  <div class="col-sm-4">
+	    <div class="thumbnail">
+	      <img src="@routes.Assets.versioned("images/img/portfolio_pic4.jpg")" alt="Paris">
+	    </div>
+	  </div>
+	  </div>
+	  
+	  <div class="row text-center slideanim">
+	  <div class="col-sm-4">
+	    <div class="thumbnail">
+	      <img src="@routes.Assets.versioned("images/img/image1.jpg")" alt="Paris">
+	    </div>
+	  </div>
+	  
+	  
+	  
+	  <div class="col-sm-4">
+	    <div class="thumbnail">
+	      <img src="@routes.Assets.versioned("images/img/portfolio_pic8.jpg")" alt="Paris">
+	    </div>
+	  </div>
+	  
+	  
+	  
+	  <div class="col-sm-4">
+	    <div class="thumbnail">
+	      <img src="@routes.Assets.versioned("images/img/room.jpg")" alt="Paris">
+	    </div>
+	  </div>
+	  </div>
+	  
+	</div>
+	</div>
+
+	<!------Product gallery-------->
+	
+	<!------contact us-------->
+	
+	<div id="contact" class="container">
+	  <h3 class="text-center">Contact US</h3>
+	  <p class="text-center"><em>We value your feedback!</em></p>
+	  <div class="row test">
+	    <div class="col-md-4">
+	      <p>Fan? Drop a note.</p>
+	      <p><span class="glyphicon glyphicon-map-marker"></span>Sunnyvale, US</p>
+	      <p><span class="glyphicon glyphicon-phone"></span>Phone: +00 1515151515</p>
+	      <p><span class="glyphicon glyphicon-envelope"></span>Email: sravya at gmail.com</p> 
+	    </div>
+	    <div class="col-md-8">
+	      <div class="row">
+	        <div class="col-sm-6 form-group">
+	          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+	        </div>
+	        <div class="col-sm-6 form-group">
+	          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+	        </div>
+	      </div>
+	      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea>
+	      <br>
+	      <br>
+	      <div class="row">
+	        <div class="col-md-12 form-group">
+	          <button class="btn" type="submit">Send</button>
+	        </div>
+	      </div> 
+	    </div>
+	  </div>
+	</div>
+	<!------contact us-------->
+	<!---footer----->
+
+	<footer class="text-center">
+	  <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
+	    <span class="glyphicon glyphicon-chevron-up"></span>
+	  </a><br><br>
+	  <p>Copyright © 2015,AROID Inc. </a></p> 
+	</footer>
+
+}
