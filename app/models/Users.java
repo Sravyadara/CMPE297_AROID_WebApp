@@ -60,7 +60,7 @@ public class Users {
 	
 	public static String findByName(String userName, String userPwd){
 		Users u = users().findOne("{userName: #, password:#}", userName, userPwd).as(Users.class);
-		if(u.role != null) {
+		if(u != null) {
 			return u.role;
 		}else {
 			return "Invalid";
