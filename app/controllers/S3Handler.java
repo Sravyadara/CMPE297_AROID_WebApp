@@ -34,7 +34,6 @@ public class S3Handler {
                     e);
         }
         
-        //BasicAWSCredentials awsCreds = new BasicAWSCredentials("AKIAIEEE7NCNDSNY4KPA", "JttHTAKZ3dhkbGLumkawpe0LgYBe3XGVFQNUScys");
         s3 = new AmazonS3Client(credentials);
         
         
