@@ -20,16 +20,22 @@
     </div>
   </div>
 </nav>
+ 
+ <br>
+ <div id="gallery" class ="bg-1"> 
+<div style="padding:30px 50px">
+<h3 class = "text-center"> PRODUCT GALLERY</h3>
+</div>
+</div>
 
 <div align="right">
  <a href="/retailerAddProduct"><img src = "@routes.Assets.versioned("images/img/addIcon.png")" alt="Add new product"/></a>
  </div>
- 
-<div class="container">
- <h4>Product Catagories:</h4> 
- <br> 
- 
- 
+<div style="padding:30px 100px">
+
+ @if(productDetailsArray.length == 0){
+	<div align="center" id="failureMessage"> <p style="color:green;"> There are no products under this category. Add one by clicking "+" icon.</p></div> 
+ }
  <div class="row">
  
  @for(productDetail <- productDetailsArray) {

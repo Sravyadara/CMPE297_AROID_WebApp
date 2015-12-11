@@ -26,6 +26,8 @@ import models.Products;
 import uk.co.panaxiom.playjongo.*;
 
 public class Application extends Controller {
+	
+	public  String status = "success";
 
 	public List<String> list;
 	public List<String> names;
@@ -88,7 +90,8 @@ public class Application extends Controller {
 
 	public Result viewLogin() {
 		Form<LoginForm> formData = Form.form(LoginForm.class);
-		return ok(login.render(formData));
+		System.out.println("Status variable : " + status);
+		return ok(login.render(formData, status));
 	}
 
 	public Result login() {
@@ -97,34 +100,34 @@ public class Application extends Controller {
 
 		//UserInfo userInfo = UserInfo.findByName(user.getUsername())
 		System.out.println("Current user session: "+ login.getUsername());
-//		if(session("username") == null){
-//			session("username", login.getUsername());
-//		}
-		String result = Users.findByName(login.getUsername(), login.getPassword());
-		if(!result.equalsIgnoreCase("Invalid")) {
-			
-			if(result.equalsIgnoreCase("admin")){
-				
+		session("username", login.getUsername());
+		
+		Users user = Users.findByName(login.getUsername(), login.getPassword());
+		if(user != null) {
+			if(user.role.equalsIgnoreCase("admin")){
 				return ok(adminRetailerCatalog.render("Your new application is ready."));
-			}else if(result.equalsIgnoreCase("retailer")) {
-				
+			}else if(user.role.equalsIgnoreCase("retailer")){
+				session("retailerName", user.retailer);
 				return showRetailerCategories();
-			}else if(result.equalsIgnoreCase("customer")) {
+			}else if(user.role.equalsIgnoreCase("customer")){
 				return listofCategories();
 			}
+		
 		}else {
 			System.out.println("Invalid Credentials");
+			status = "failed";
 			return viewLogin();
 		}
 		return ok();
 	}
 	
-//	public Result logout() {
-//		
-//        
-//        session().clear();
-//        return ok(login.render("Your new application is ready."));
-//	}
+	public Result logout() {
+        session().clear();
+        System.out.println("Session username : " + session("username"));
+        System.out.println("Session retailer name : " + session("retailerName"));
+        status = "relogin";
+		return viewLogin();
+	}
 
 
 	public Result showProductFormData() {
@@ -169,7 +172,7 @@ public class Application extends Controller {
 			cn = data.productCategory;
 			UUID productId = UUID.randomUUID();
 			if(p.findCategory(data.productCategory) != null){
-				p.updateCategory(productId, data.productCategory, data.productName, data.productDescription, data.productPrice, qrUrl, imageUrl);
+				p.updateCategory(productId, data.productCategory, data.productName, data.productDescription, data.productPrice, qrUrl, imageUrl, session("retailerName"));
 			}else {
 				List<ProductDetails> productDetailsArray = new ArrayList<ProductDetails>();
 				ProductDetails productDetails = new ProductDetails();
@@ -179,7 +182,7 @@ public class Application extends Controller {
 				productDetails.setPrice(data.productPrice);
 				productDetails.setQrcode(qrUrl);
 				productDetails.setImage(imageUrl);
-				productDetails.setRetailer("ikea");
+				productDetails.setRetailer(session("retailerName"));
 				productDetailsArray.add(productDetails);
 				p.categoryname = data.productCategory;
 				p.products = productDetailsArray;
@@ -200,7 +203,7 @@ public class Application extends Controller {
 		while(cursor.hasNext()){
 			List<ProductDetails> details = cursor.next().products;
 			for(ProductDetails d : details) {
-				if(d.retailer.equalsIgnoreCase("ikea")){
+				if(d.retailer.equalsIgnoreCase(session("retailerName"))){
 					filteredProductDetails.add(d);
 				}
 			}

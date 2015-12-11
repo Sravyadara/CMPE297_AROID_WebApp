@@ -1,16 +1,17 @@
 # Ignore Play! working directory #
-bin/
-/db
+*.eml
+.cache
 .eclipse
+.sbtserver/
+/db
+bin/
+dist/
 lib/
 logs/
 modules/
-project/target/
 project/project/
-target/
-tmp/
-test-result
+project/target/
 server.pid
-*.eml
-dist/
-.cache
+target/
+test-result
+tmp/

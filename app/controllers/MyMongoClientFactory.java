@@ -20,7 +20,7 @@ public class MyMongoClientFactory extends MongoClientFactory{
 				.maxConnectionIdleTime(6000)
 				.build();
 		
-		return new MongoClient(Arrays.asList(new ServerAddress("10.0.0.11", 27017)), options);
+		return new MongoClient(Arrays.asList(new ServerAddress("192.168.1.6", 27017)), options);
 	}
 
 }

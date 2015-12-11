@@ -1,4 +1,4 @@
-@(loginFormData: Form[models.LoginForm])
+@(loginFormData: Form[models.LoginForm], statusMessage: String)
 
 @import helper._
 
@@ -6,7 +6,7 @@
 
  <style>
     .login {
-        background: rgba(0, 0, 0, 0) url("@routes.Assets.versioned("images/login/imac.png")") no-repeat scroll 0 0 / 940px 778px;
+        background: rgba(0, 0, 0, 0) url("@routes.Assets.versioned("images/img/imac.png")") no-repeat scroll 0 0 / 940px 778px;
         color: #fff;
         margin-bottom: 77px;
         padding: 38px 38px 267px;
@@ -65,6 +65,16 @@
         transition: border 0.25s linear 0s, color 0.25s linear 0s, background-color 0.25s linear 0s;
     }
     </style>
+    
+    
+    @if( statusMessage == "failed") {
+    	<br><br>
+    	<div align="center" id="failureMessage"> <p style="color:red;"> Unsuccesful attempt, Please provide valid credentials </p></div>
+    }
+    @if(statusMessage == "relogin"){
+    	<br><br>
+    	<div align="center" id="reloginMessage"> <p style="color:green;"> Thank you. Hope you enjoyed our service :) </p></div>
+    }
     <div class="container">
       <div class="login" >
         <div class="login-screen">

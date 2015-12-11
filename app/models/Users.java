@@ -58,13 +58,13 @@ public class Users {
 		return users().findOne("{firstName: #}", firstName).as(Users.class);	
 	}
 	
-	public static String findByName(String userName, String userPwd){
-		Users u = users().findOne("{userName: #, password:#}", userName, userPwd).as(Users.class);
-		if(u != null) {
-			return u.role;
-		}else {
-			return "Invalid";
-		}
+	public static Users findByName(String userName, String userPwd){
+		return users().findOne("{userName: #, password:#}", userName, userPwd).as(Users.class);
+//		if(u != null) {
+//			return u.role;
+//		}else {
+//			return "Invalid";
+//		}
 		
 		
 	}

@@ -19,6 +19,7 @@ GET     /user_products/search/:category/:id                           controller
 
 # Susmitha's changes
 GET     /viewLogin                  controllers.Application.viewLogin()
+GET 	/logout						controllers.Application.logout()
 POST    /login                      controllers.Application.login()
 
 GET		/retailerCategories				controllers.Application.showRetailerCategories()

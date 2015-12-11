@@ -1,6 +1,7 @@
 .container{
-      padding: 120px 120px;
+      padding: 60px 120px;
   }
+
   
 .person {
     border: 10px solid transparent;
@@ -65,7 +66,7 @@
       background-color: #ffcc33;
       color: #f1f1f1;
       border-radius: 0;
-      margin-left: 200px;
+      margin-left: 2px;
       transition: .3s;
 }
   
