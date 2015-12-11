@@ -1,4 +1,25 @@
-[0m[[31merror[0m] [0m/Users/sravyadara/Documents/Softwares/activator-dist-1.3.7/cmpe297/app/views/index.scala.html:242: not found: value mail[0m
-[0m[[31merror[0m] [0m	      <p><span class="glyphicon glyphicon-envelope"></span>Email: mail@mail.com</p> [0m
-[0m[[31merror[0m] [0m	                                                                       ^[0m
-[0m[[31merror[0m] [0mone error found[0m
+[0m[[31merror[0m] [0m/Users/ramyaky/activator-1.3.7-minimal/CMPE297Project/app/controllers/Application.java:119: missing return statement[0m
+[0m[[31merror[0m] [0m{[0m
+[0m[[31merror[0m] [0m		Form<LoginForm> userForm = Form.form(LoginForm.class);[0m
+[0m[[31merror[0m] [0m		LoginForm login = userForm.bindFromRequest().get();[0m
+[0m[[31merror[0m] [0m[0m
+[0m[[31merror[0m] [0m		//UserInfo userInfo = UserInfo.findByName(user.getUsername())[0m
+[0m[[31merror[0m] [0m		System.out.println("Current user session: "+ login.getUsername());[0m
+[0m[[31merror[0m] [0m		[0m
+[0m[[31merror[0m] [0m//		if(session("username") == null){[0m
+[0m[[31merror[0m] [0m//			session("username", login.getUsername());[0m
+[0m[[31merror[0m] [0m//		}[0m
+[0m[[31merror[0m] [0m		String result = Users.findByName(login.getUsername(), login.getPassword());[0m
+[0m[[31merror[0m] [0m		if(!result.equalsIgnoreCase("Invalid")) {[0m
+[0m[[31merror[0m] [0m			if(result.equalsIgnoreCase("admin")){[0m
+[0m[[31merror[0m] [0m				return ok(adminRetailerCatalog.render("Your new application is ready."));[0m
+[0m[[31merror[0m] [0m			}else if(result.equalsIgnoreCase("retailer")) {[0m
+[0m[[31merror[0m] [0m				return showRetailerCategories();[0m
+[0m[[31merror[0m] [0m			}else if(result.equalsIgnoreCase("customer")) {[0m
+[0m[[31merror[0m] [0m				return listofCategories();[0m
+[0m[[31merror[0m] [0m			}[0m
+[0m[[31merror[0m] [0m		}else {[0m
+[0m[[31merror[0m] [0m			System.out.println("Invalid Credentials");[0m
+[0m[[31merror[0m] [0m			return viewLogin();[0m
+[0m[[31merror[0m] [0m		}[0m
+[0m[[31merror[0m] [0m	}[0m

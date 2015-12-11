@@ -1,16 +1,16 @@
-New log file opened at Fri Dec 04 09:50:21 PST 2015 by 3516@ramyaky-mac
-Taking next connection to: 56348
-New client attempting to connect on port: 56349-56348
-  Address = /10.0.0.5:56348
-This client on port 56349 has uuid 662f6405-35f7-4412-b9bb-7ff1f85d43de configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
-Connected Clients: play-fork-run-662f6405-35f7-4412-b9bb-7ff1f85d43de
-Taking next connection to: 56348
+New log file opened at Thu Dec 10 19:38:23 PST 2015 by 13134@ramyaky-mac
+Taking next connection to: 65093
+New client attempting to connect on port: 65094-65093
+  Address = /10.0.0.5:65093
+This client on port 65094 has uuid 2a4b18f8-4e82-48ba-a56a-07146a6d1268 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: play-fork-run-2a4b18f8-4e82-48ba-a56a-07146a6d1268
+Taking next connection to: 65093
 Checking to see if clients are empty...
 We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 56348
+Taking next connection to: 65093
 Checking to see if clients are empty...
 We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 56348
+Taking next connection to: 65093
 Checking to see if clients are empty...
 We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 56348
+Taking next connection to: 65093

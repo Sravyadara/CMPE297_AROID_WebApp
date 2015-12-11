@@ -1,0 +1,155 @@
+@import models.ProductDetails
+@(list:List[ProductDetails])
+
+@main("AROID:Explore,Visualize") {
+
+<!DOCTYPE html>
+<html lan="en">
+<head>
+<title>User Screen</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <style>
+  .panel-default > .panel-heading {
+  color: #fff;
+  background-color: #ffcc33;
+  border-color: #ddd;
+}
+  </style>
+</head>
+
+<body>
+<script>
+var cat = sessionStorage.getItem('category');
+
+function searchfunction()
+{
+	var searchtext = document.getElementById("txtsearch").value;
+	if(searchtext=="")
+		{ 
+		window.location = '/user_products/'+cat;	
+		}
+	else
+		{
+	    window.location = '/user_products/search/'+cat+'/'+searchtext;
+		}
+}
+function prodredirectfunc(category)
+{ 
+     window.location = '/product_screen/'+cat+'/'+category ;
+} 
+
+</script>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">AROID</a>
+    </div>
+    <div>
+      <ul class="nav navbar-nav">
+       <li ><a href="http://localhost:9000/" >Home</a></li>
+        <li class="active"><a href="#">CATALOG</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> User</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> SIGN OUT</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!--  <div class="container">
+ <h4>Product Catagories:</h4> 
+ <br> 
+ <div class="row">
+ 
+--> 
+
+<div id="gallery" class ="bg-1"> 
+<div class="container">
+<h3 class = "text-center"> PRODUCT GALLERY</h3>
+<div class="row">
+<div class="col-sm-4">
+</div>
+<div class="col-sm-4">
+</div>
+<div class="col-sm-4">
+      <form role="form">
+      <table style="width:100%">
+  <tr>
+    <td ><input type="text"  id="txtsearch"></td>
+    <td ><button type="button" onclick=searchfunction() >Search</button></td>		
+    
+  </tr>
+  </table>
+      </form> 
+    </div>
+
+@for(productDetail <- list) {
+    
+ <div class="col-sm-4">
+      <div class="panel panel-default">
+        <div class="panel-heading"><a onclick='prodredirectfunc("@productDetail.productid")'>@productDetail.name </div>
+        
+        <div class="panel-body">
+        
+        <img  src=@productDetail.image class="img-responsive" style="width:100%" alt="Image"></a></div>
+      
+      </div>
+    </div>
+ }
+ </div>
+</div>
+<!--    <div class="row">
+    <div class="col-sm-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">Living Room</div>
+        <div class="panel-body"><img src="img/2.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+      </div>
+    </div>
+    <div class="col-sm-4"> 
+      <div class="panel panel-default">
+        <div class="panel-heading">Bed & Bath</div>
+        <div class="panel-body"><img src="img/image1.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+      </div>
+    </div>
+    <div class="col-sm-4"> 
+      <div class="panel panel-default">
+        <div class="panel-heading">Kitchen & Appliances</div>
+        <div class="panel-body"><img src="img/portfolio_pic5.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">Garden</div>
+        <div class="panel-body"><img src="img/portfolio_pic3.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+      </div>
+    </div>
+
+    <div class="col-sm-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">Electronics</div>
+        <div class="panel-body"><img src="img/portfolio_pic3.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+      </div>
+    </div>
+    <div class="col-sm-4"> 
+      <div class="panel panel-default">
+        <div class="panel-heading">Toys & Gifts</div>
+        <div class="panel-body"><img src="img/portfolio_pic7.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+      </div>
+    </div>
+    <div class="col-sm-4"> 
+      <div class="panel panel-default">
+        <div class="panel-heading">Smart Home</div>
+        <div class="panel-body"><img src="img/image3.jpg" class="img-responsive" style="width:100%" alt="Image"></div> 
+      </div>
+    </div>  -->
+  </div>
+</div><br><br>
+
+</body>
+</html>
+}

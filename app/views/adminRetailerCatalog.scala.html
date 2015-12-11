@@ -1,0 +1,76 @@
+@(message: String)
+
+@main("ADMIN") {
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">AROID</a>
+    </div>
+    <div>
+      <ul class="nav navbar-nav">
+        <li><a href="@{routes.Application.index()}">Home</a></li>
+        <li><a href="@{routes.Application.adminInbox()}">INBOX</a></li>
+        <li><a href="#retailers">RETAILERS</a></li> 
+        <li class="active"><a href="@{routes.Application.adminRetailerCatalog()}">CATALOG</a></li> 
+        <li><a href="#analytics">ANALYTICS</a></li> 
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Admin</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Sign Out</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<br>
+<br>
+<div class="inbox-heading">
+  <h4>Retailer Catalog:</h4>
+</div>
+<div class="container-images">    
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="panel panel-default">
+        <div class="panel-heading text-center">IKEA</div>
+        <div class="panel-body"><a href="/adminCatalog/IKEA"><img src="@routes.Assets.versioned("images/img/2.jpg")" class="img-responsive" style="width:100%" alt="Image"></a></div>
+      </div>
+    </div>
+    <div class="col-sm-4"> 
+      <div class="panel panel-default">
+        <div class="panel-heading text-center">LAY-Z-BOY</div>
+        <div class="panel-body"><a href="/adminCatalog/LAY-Z-BOY"><img src="@routes.Assets.versioned("images/img/image1.jpg")" class="img-responsive" style="width:100%" alt="Image"></a></div>
+      </div>
+    </div>
+    <div class="col-sm-4"> 
+      <div class="panel panel-default">
+        <div class="panel-heading text-center">TARGET</div>
+        <div class="panel-body"><a href="/adminCatalog/TARGET"><img src="@routes.Assets.versioned("images/img/portfolio_pic5.jpg")" class="img-responsive" style="width:100%" alt="Image"></a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-images">    
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="panel panel-default">
+        <div class="panel-heading text-center">WAYFAIR</div>
+        <div class="panel-body"><a href="/adminCatalog/WAYFAIR"><img src="@routes.Assets.versioned("images/img/portfolio_pic3.jpg")" class="img-responsive" style="width:100%" alt="Image"></a></div>
+      </div>
+    </div>
+    <div class="col-sm-4"> 
+      <div class="panel panel-default">
+        <div class="panel-heading text-center">MR.COUCH</div>
+        <div class="panel-body"><a href="/adminCatalog/MR.COUCH"><img src="@routes.Assets.versioned("images/img/portfolio_pic7.jpg")" class="img-responsive" style="width:100%" alt="Image"></a></div>
+      </div>
+    </div>
+    <div class="col-sm-4"> 
+      <div class="panel panel-default">
+        <div class="panel-heading text-center">THE WOODSHOP</div>
+        <div class="panel-body"><a href="/adminCatalog/THE WOODSHOP"><img src="@routes.Assets.versioned("images/img/image3.jpg")" class="img-responsive" style="width:100%" alt="Image"></a></div> 
+      </div>
+    </div>
+  </div>
+</div><br><br>
+
+}

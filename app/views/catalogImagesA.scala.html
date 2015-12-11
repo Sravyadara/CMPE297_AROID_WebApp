@@ -1,0 +1,49 @@
+@import models.ProductDetails
+
+@(id:String,list:List[ProductDetails])
+
+
+@main("CATALOG") {
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">AROID</a>
+    </div>
+    <div>
+      <ul class="nav navbar-nav">
+        <li><a href="@{routes.Application.index()}">HOME</a></li>
+        <li><a href="#inbox">INBOX</a></li>
+        <li><a href="#retailers">RETAILERS</a></li> 
+        <li class="active"><a href="#catalog">CATALOG</a></li> 
+        <li><a href="#analytics">ANALYTICS</a></li> 
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> ADMIN</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> SIGN OUT</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<br>
+<br>
+<div class="inbox-heading">
+  <h4>@id Catalog:</h4>
+</div>
+
+<div class="container-images"> 
+  <div class="row"> 
+   @for(productDetail <- list) { 
+    <div class="col-sm-4"> 
+      <div class="panel panel-default">
+        <div class="panel-heading text-center">@productDetail.name</div>
+        <div class="panel-body"><img src=@productDetail.image style="width:100%" alt="Image"></div>
+      </div>
+    </div>
+    
+    }
+    </div>
+    </div>
+    
+    
+}

@@ -148,3 +148,58 @@ footer a:hover {
     color: #777;
     text-decoration: none;
 }
+
+.retailer-heading {
+  padding:50px;
+}
+
+.container-images{
+      padding: 50px;
+  }
+  
+  .container-inbox{
+      padding: 30px;
+  }
+  
+.panel-default > .panel-heading {
+  color: #fff;
+  background-color: #ffcc33;
+  border-color: #ddd;
+  
+}
+
+.green{
+  color: #008000;
+}
+
+.red{
+  color: #FF0000;
+}
+
+
+thead th {
+  background-color: #ffcc33;
+  color: white;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0 5px;
+}
+
+tr td:first-child,
+tr th:first-child {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+tr td:last-child,
+tr th:last-child {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.inbox-heading {
+ 
+     margin-left: 50px;
+}

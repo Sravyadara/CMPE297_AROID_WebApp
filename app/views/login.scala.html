@@ -1,0 +1,130 @@
+@(loginFormData: Form[models.LoginForm])
+
+@import helper._
+
+@main("Login") {
+
+ <style>
+    .login {
+        background: rgba(0, 0, 0, 0) url("@routes.Assets.versioned("images/login/imac.png")") no-repeat scroll 0 0 / 940px 778px;
+        color: #fff;
+        margin-bottom: 77px;
+        padding: 38px 38px 267px;
+        position: relative;
+    }
+    .login-screen {
+        background-color: #ffcc33;
+        min-height: 473px;
+        width: 864px;
+        padding: 123px 199px 33px 306px;
+    }
+    .login-icon {
+        left: 200px;
+        position: absolute;
+        top: 160px;
+        width: 96px;
+    }
+    .login-form {
+        background-color: #edeff1;
+        border-radius: 6px;
+        padding: 24px 23px 20px;
+        position: relative;
+    }
+    .form-group {
+        margin-bottom: 20px;
+        position: relative;
+    }
+    .btn-block {
+    white-space: normal;
+    }
+    .btn-lg, .btn-group-lg > .btn {
+        border-radius: 6px;
+        font-size: 17px;
+        line-height: 1.471;
+        padding: 10px 19px;
+    }
+    .login-link {
+        color: #bfc9ca;
+        display: block;
+        font-size: 13px;
+        margin-top: 15px;
+        text-align: center;
+    }
+    .btn-primary {
+        background-color: #ffcc33;
+        color: #fff;
+    }
+    .btn {
+        border: medium none;
+        border-radius: 4px;
+        font-size: 15px;
+        font-weight: normal;
+        line-height: 1.4;
+        padding: 10px 15px;
+        text-align: center;
+        transition: border 0.25s linear 0s, color 0.25s linear 0s, background-color 0.25s linear 0s;
+    }
+    </style>
+    <div class="container">
+      <div class="login" >
+        <div class="login-screen">
+          <div class="login-icon">
+            <img src="@routes.Assets.versioned("images/login/augmented-reality-icon.png")" alt="Welcome to Mail App" />
+            <h4>Welcome to <small>AROID</small></h4>
+          </div>
+    @form(action = routes.Application.login()) {
+          <div class="login-form">
+            <div class="form-group">
+              <input type="text" class="form-control login-field" value="" placeholder="Enter your name" id="@loginFormData("username").id"
+              	name="@loginFormData("username").name"
+              	value="@loginFormData("username").value" />
+              <label class="login-field-icon fui-user" for="login-name"></label>
+            </div>
+
+            <div class="form-group">
+              <input type="password" class="form-control login-field" value="" placeholder="Password" id="@loginFormData("password").id"
+              name="@loginFormData("password").name"
+              value="@loginFormData("password").value" />
+              <label class="login-field-icon fui-lock" for="login-pass"></label>
+            </div>
+
+            <input  class="btn-primary btn-lg btn-block" style="padding:7px 18px;" type="submit" name="login" Value="Log in">
+            <a class="login-link" href="#">Lost your password?</a>
+          </div>
+          
+          }
+          
+        </div>
+      </div>
+
+
+    </div> <!-- /container -->
+
+    <footer style="height: 267px;">
+      <div class="container">
+        <div class="row" style="height: 267px;">
+          <div class="col-xs-7" style="height: 267px;">
+            <h3 class="footer-title">Contact Us</h3>
+            <p>customerservice(at)aroid.com<br/>
+              Subscribe to our newsletter for more updates.<br/>
+              Go to: <a href="http://aroid.com/augment" target="_blank">aroid.com/augment</a>
+            </p>
+
+
+          </div> <!-- /col-xs-7 -->
+
+          <div class="col-xs-5" style="height: 267px;">
+            <div class="footer-banner" style="height: 267px;">
+              <h3 class="footer-title">Get AROID App</h3>
+              Go to: <a href="http://aroid.com/augment" target="_blank">aroid.com/augment</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      videojs.options.flash.swf = "@routes.Assets.versioned("dist/js/vendors/video-js.swf")"
+    </script>
+
+}

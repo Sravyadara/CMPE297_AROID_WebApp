@@ -4,7 +4,7 @@
 		module="cmpe297_2.11"
 		revision="1.0-SNAPSHOT"
 		status="integration"
-		publication="20151204094718"
+		publication="20151210193517"
 	>
 		<description>
 		cmpe297
@@ -46,5 +46,7 @@
 		<dependency org="com.typesafe.play" name="play-java-jdbc_2.11" rev="2.4.4" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-cache_2.11" rev="2.4.4" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-java-ws_2.11" rev="2.4.4" conf="compile->default(compile)"/>
+		<dependency org="uk.co.panaxiom" name="play-jongo_2.11" rev="0.9.0-jongo1.2" conf="compile->default(compile)"/>
+		<dependency org="com.amazonaws" name="aws-java-sdk" rev="1.9.14" conf="compile->default(compile)"/>
 	</dependencies>
 </ivy-module>

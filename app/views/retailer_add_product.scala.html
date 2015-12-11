@@ -1,0 +1,156 @@
+@(productFormData: Form[views.productFormData.ProductForm])
+
+@import helper._
+
+@main("AROID:Explore,Visualize") {
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">AROID</a>
+    </div>
+    <div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">CATALOG</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> RETAILER</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> SIGN OUT</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+ 
+<div class="container">
+ <h4>Add Product:</h4> 
+ <br> 
+ 
+ 
+ <div align="center" class="row">
+ <div  class="col-sm-11">
+      <div class="panel panel-default">
+        <div class="panel-heading"></div>
+        <div class="panel-body">
+        
+        @form(action = routes.Application.postProductFormData(), 'class -> "form-horizontal", 'enctype -> "multipart/form-data") {
+        
+    		<div class="form-group">
+      			<label class="control-label col-sm-3">Product Name:</label>
+      			<div class="col-sm-7">
+        			<input type="text" class="form-control" 
+        					name="@productFormData("productName").name"
+        					id="@productFormData("productName").id" 
+        					value="@productFormData("productName").value" 
+        					placeholder="Name">
+      			</div>
+    		</div>
+    		<div class="form-group">
+      			<label class="control-label col-sm-3" for="description">Product Description::</label>
+      			<div class="col-sm-7">          
+        			<input type="text" class="form-control" 
+        				name="@productFormData("productDescription").name" 
+        				id="@productFormData("productDescription").id" 
+        				value="@productFormData("productDescription").value" 
+        				placeholder="Description">
+      			</div>
+    		</div>
+   			<div class="form-group">
+      			<label class="control-label col-sm-3" for="price"> product Price:</label>
+      			<div class="col-sm-7">          
+        			<input type="number" class="form-control" 
+        				name="@productFormData("productPrice").name"
+        				id="@productFormData("productPrice").id" 
+        				value="@productFormData("productPrice").value" 
+        				placeholder="Price">
+      			</div>
+    		</div>
+    		
+    		<!--<div class="form-group">
+      			<label class="control-label col-sm-3" for="categoryname"> Product Category:</label>
+				<div class="col-sm-2">          
+       	 			<button class="dropdown-toggle dropdown-custom" 
+       	 				type="button" 
+       	 				name="@productFormData("productCategory").name"
+        				id="@productFormData("productCategory").id" 
+        				value="@productFormData("productCategory").value"
+       	 				data-toggle="dropdown">Select Category<span class="caret"></span>
+       	 			</button>
+  					<ul class="dropdown-menu" role="menu" aria-labelledby="categorymenu">
+    					<li role="presentation"><a role="menuitem" href="#">Living</a></li>
+    					<li role="presentation"><a role="menuitem" href="#">Kitchen</a></li>
+    					<li role="presentation"><a role="menuitem" href="#">3.Home & Furniture</a></li>
+    					<li role="presentation"><a role="menuitem" href="#">4.Bed & Bath</a></li>
+  					</ul>
+      			</div>
+    		</div> -->
+    		
+    		<div class="form-group">
+    			<label class="control-label col-sm-3" for="categoryname"> Product Category:</label>
+    			<div class="col-sm-2"> 
+    				<select name="@productFormData("productCategory").name"
+    						id="@productFormData("productCategory").id" 
+    						value="@productFormData("productCategory").value">
+    					<option>Living Room</option>
+    					<option>Kitchen</option>
+    					<option>Dining</option>
+    					<option>Bed & Bath</option>
+    					<option>Patio & Garden</option>
+    				</select>
+    			</div>
+    		</div>
+    		
+    		<div class="form-group">
+      			<label class="control-label col-sm-3">QR Code:</label>
+      			<div class="col-sm-3">          
+        			<input type="file" 
+        				name="qrcodefiled"
+        				id="@productFormData("productQRCode").id" 
+        				value="@productFormData("productQRCode").value
+        			 	accept="image/*">
+      			</div>
+    		</div>
+    		
+    		<div class="form-group">
+      			<label class="control-label col-sm-3">Image File:</label>
+      			<div class="col-sm-3">          
+        			<input type="file" 
+        				name="imagefiled"
+        				id="@productFormData("productImage").id" 
+        				value="@productFormData("productImage").value
+        			 	accept="image/*">
+      			</div>
+    		</div>
+    		
+    		<br><br>
+    		<div class="form-group">        
+      			<div class="col-sm-offset-3 col-sm-3">
+        			<button type="submit" class="btn btn-primary">Submit</button>
+        		</div>
+        		<div class="col-sm-1">
+        			<button id="resetbutton" type="reset" class="btn">Reset</button>
+        		</div>
+    		</div>
+    		
+  		}
+  		
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div><br><br>
+
+<script type="application/javascript">
+
+    $(".dropdown-menu li a").click(function(){
+      $(".dropdown-toggle").value($(this.text()));
+      $(".dropdown-toggle").html($(this).text() + ' <span class="caret" align="right"></span>');
+    });
+    
+    $("#resetbutton").click(function() {
+    	$(".dropdown-toggle").html('Select Category' + ' <span class="caret" align="right"></span>');
+	});
+
+</script>
+
+}

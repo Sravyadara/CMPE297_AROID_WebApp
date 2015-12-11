@@ -1,0 +1,80 @@
+@import models.Users
+
+@(list:List[Users])
+
+@main("INBOX") {
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">AROID</a>
+    </div>
+    <div>
+      <ul class="nav navbar-nav">
+        <li><a href="@{routes.Application.index()}">HOME</a></li>
+        <li><a class="active" href="#inbox">INBOX</a></li>
+        <li><a href="#retailers">RETAILERS</a></li> 
+        <li ><a href="@{routes.Application.adminRetailerCatalog()}">CATALOG</a></li> 
+        <li><a href="#analytics">ANALYTICS</a></li> 
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> ADMIN</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> SIGN OUT</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<br>
+<br>
+<div class="inbox-heading" >
+  <h4>INBOX:</h4>
+</div>
+<div class="container-images">
+<table class = "table">
+<thead class = "info">
+<tr>
+ <th>  </th>
+ <th>Firstname</th>
+ <th>Lastname</th>
+ <th>Email</th>
+ <th>Role</th>
+ <th>Retailer</th>
+ <th> </th>
+ <th> </th>
+</tr>
+</thead>
+<tbody>
+ @for(details <- list){
+ 
+      <tr class="warning">
+       <td><span class="glyphicon glyphicon-user green"></span></td>
+        <td>@details.firstName</td>
+        <td>@details.lastName</td>
+        <td>@details.emailId</td>
+        <td>@details.role</td>
+        <td>@details.retailer</td>
+         <td><a onclick=updateStatus("active","@details.userName")> <span class="glyphicon glyphicon-ok green"></span></a></td>
+         <td><a onclick=updateStatus("rejected","@details.userName")> <span class="glyphicon glyphicon-remove red"></span></a></td>
+          
+      </tr>
+      
+      }
+      
+      
+    </tbody>
+
+</table>
+
+</div>
+
+<script>
+
+function updateStatus(status,userName)
+{  
+	window.location = '/updateUserStatus/'+status+'/'+userName;
+	
+	}
+</script>
+    
+    
+}

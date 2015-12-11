@@ -81,6 +81,61 @@
 [0m[[0minfo[0m] [0mResolving org.apache.httpcomponents#httpcore;4.0.1 ...[0m
 [0m[[0minfo[0m] [0mResolving org.apache.httpcomponents#httpclient;4.0.1 ...[0m
 [0m[[0minfo[0m] [0mResolving commons-logging#commons-logging;1.1.1 ...[0m
+[0m[[0minfo[0m] [0mResolving uk.co.panaxiom#play-jongo_2.11;0.9.0-jongo1.2 ...[0m
+[0m[[0minfo[0m] [0mResolving org.scala-lang#scala-library;2.11.7 ...[0m
+[0m[[0minfo[0m] [0mResolving org.mongodb#mongo-java-driver;3.0.2 ...[0m
+[0m[[0minfo[0m] [0mResolving org.jongo#jongo;1.2 ...[0m
+[0m[[0minfo[0m] [0mResolving de.undercouch#bson4jackson;2.4.0 ...[0m
+[0m[[0minfo[0m] [0mResolving com.amazonaws#aws-java-sdk;1.9.14 ...[0m
+[0m[[0minfo[0m] [0mResolving com.amazonaws#aws-java-sdk-support;1.9.14 ...[0m
+[0m[[0minfo[0m] [0mResolving com.amazonaws#aws-java-sdk-core;1.9.14 ...[0m
+[0m[[0minfo[0m] [0mResolving commons-logging#commons-logging;1.1.3 ...[0m
+[0m[[0minfo[0m] [0mResolving org.apache.httpcomponents#httpclient;4.3.4 ...[0m
+[0m[[0minfo[0m] [0mResolving org.apache.httpcomponents#httpcore;4.3.2 ...[0m
+[0m[[0minfo[0m] [0mResolving joda-time#joda-time;[2.2,) ...[0m
+[0m[[0minfo[0m] [0mResolving joda-time#joda-time;[2.2,) ...[0m
+[0m[[0minfo[0m] [0mResolving com.amazonaws#aws-java-sdk-simpledb;1.9.14 ...[0m
+[0m[[0minfo[0m] [0mResolving com.amazonaws#aws-java-sdk-simpleworkflow;1.9.14 ...[0m
+[0m[[0minfo[0m] [0mResolving com.amazonaws#aws-java-sdk-storagegateway;1.9.14 ...[0m
+[0m[[0minfo[0m] [0mResolving com.amazonaws#aws-java-sdk-route53;1.9.14 ...[0m
+[0m[[0minfo[0m] [0mResolving com.amazonaws#aws-java-sdk-s3;1.9.14 ...[0m
+[0m[[0minfo[0m] [0mResolving com.amazonaws#aws-java-sdk-kms;1.9.14 ...[0m
+[0m[[0minfo[0m] [0mResolving com.amazonaws#aws-java-sdk-importexport;1.9.14 ...[0m
+[0m[[0minfo[0m] [0mResolving com.amazonaws#aws-java-sdk-sts;1.9.14 ...[0m
+[0m[[0minfo[0m] [0mResolving com.amazonaws#aws-java-sdk-sqs;1.9.14 ...[0m
+[0m[[0minfo[0m] [0mResolving com.amazonaws#aws-java-sdk-rds;1.9.14 ...[0m
+[0m[[0minfo[0m] [0mResolving com.amazonaws#aws-java-sdk-redshift;1.9.14 ...[0m
+[0m[[0minfo[0m] [0mResolving com.amazonaws#aws-java-sdk-elasticbeanstalk;1.9.14 ...[0m
+[0m[[0minfo[0m] [0mResolving com.amazonaws#aws-java-sdk-glacier;1.9.14 ...[0m
+[0m[[0minfo[0m] [0mResolving com.amazonaws#aws-java-sdk-sns;1.9.14 ...[0m
+[0m[[0minfo[0m] [0mResolving com.amazonaws#aws-java-sdk-iam;1.9.14 ...[0m
+[0m[[0minfo[0m] [0mResolving com.amazonaws#aws-java-sdk-datapipeline;1.9.14 ...[0m
+[0m[[0minfo[0m] [0mResolving com.amazonaws#aws-java-sdk-elasticloadbalancing;1.9.14 ...[0m
+[0m[[0minfo[0m] [0mResolving com.amazonaws#aws-java-sdk-emr;1.9.14 ...[0m
+[0m[[0minfo[0m] [0mResolving com.amazonaws#aws-java-sdk-elasticache;1.9.14 ...[0m
+[0m[[0minfo[0m] [0mResolving com.amazonaws#aws-java-sdk-elastictranscoder;1.9.14 ...[0m
+[0m[[0minfo[0m] [0mResolving com.amazonaws#aws-java-sdk-ec2;1.9.14 ...[0m
+[0m[[0minfo[0m] [0mResolving com.amazonaws#aws-java-sdk-dynamodb;1.9.14 ...[0m
+[0m[[0minfo[0m] [0mResolving com.amazonaws#aws-java-sdk-cloudtrail;1.9.14 ...[0m
+[0m[[0minfo[0m] [0mResolving com.amazonaws#aws-java-sdk-cloudwatch;1.9.14 ...[0m
+[0m[[0minfo[0m] [0mResolving com.amazonaws#aws-java-sdk-logs;1.9.14 ...[0m
+[0m[[0minfo[0m] [0mResolving com.amazonaws#aws-java-sdk-cognitoidentity;1.9.14 ...[0m
+[0m[[0minfo[0m] [0mResolving com.amazonaws#aws-java-sdk-cognitosync;1.9.14 ...[0m
+[0m[[0minfo[0m] [0mResolving com.amazonaws#aws-java-sdk-directconnect;1.9.14 ...[0m
+[0m[[0minfo[0m] [0mResolving com.amazonaws#aws-java-sdk-cloudformation;1.9.14 ...[0m
+[0m[[0minfo[0m] [0mResolving com.amazonaws#aws-java-sdk-cloudfront;1.9.14 ...[0m
+[0m[[0minfo[0m] [0mResolving com.amazonaws#aws-java-sdk-kinesis;1.9.14 ...[0m
+[0m[[0minfo[0m] [0mResolving com.amazonaws#aws-java-sdk-opsworks;1.9.14 ...[0m
+[0m[[0minfo[0m] [0mResolving com.amazonaws#aws-java-sdk-ses;1.9.14 ...[0m
+[0m[[0minfo[0m] [0mResolving com.amazonaws#aws-java-sdk-autoscaling;1.9.14 ...[0m
+[0m[[0minfo[0m] [0mResolving com.amazonaws#aws-java-sdk-cloudsearch;1.9.14 ...[0m
+[0m[[0minfo[0m] [0mResolving com.amazonaws#aws-java-sdk-cloudwatchmetrics;1.9.14 ...[0m
+[0m[[0minfo[0m] [0mResolving com.amazonaws#aws-java-sdk-swf-libraries;1.9.14 ...[0m
+[0m[[0minfo[0m] [0mResolving com.amazonaws#aws-java-sdk-codedeploy;1.9.14 ...[0m
+[0m[[0minfo[0m] [0mResolving com.amazonaws#aws-java-sdk-config;1.9.14 ...[0m
+[0m[[0minfo[0m] [0mResolving com.amazonaws#aws-java-sdk-lambda;1.9.14 ...[0m
+[0m[[0minfo[0m] [0mResolving com.amazonaws#aws-java-sdk-ecs;1.9.14 ...[0m
+[0m[[0minfo[0m] [0mResolving com.amazonaws#aws-java-sdk-cloudhsm;1.9.14 ...[0m
 [0m[[0minfo[0m] [0mResolving com.typesafe.play#play-test_2.11;2.4.4 ...[0m
 [0m[[0minfo[0m] [0mResolving junit#junit;4.12 ...[0m
 [0m[[0minfo[0m] [0mResolving org.hamcrest#hamcrest-core;1.3 ...[0m
@@ -93,9 +148,6 @@
 [0m[[0minfo[0m] [0mResolving cglib#cglib-nodep;2.1_3 ...[0m
 [0m[[0minfo[0m] [0mResolving com.google.code.gson#gson;2.3 ...[0m
 [0m[[0minfo[0m] [0mResolving org.seleniumhq.selenium#selenium-api;2.44.0 ...[0m
-[0m[[0minfo[0m] [0mResolving org.apache.httpcomponents#httpclient;4.3.4 ...[0m
-[0m[[0minfo[0m] [0mResolving org.apache.httpcomponents#httpcore;4.3.2 ...[0m
-[0m[[0minfo[0m] [0mResolving commons-logging#commons-logging;1.1.3 ...[0m
 [0m[[0minfo[0m] [0mResolving org.apache.commons#commons-exec;1.1 ...[0m
 [0m[[0minfo[0m] [0mResolving net.java.dev.jna#jna;3.4.0 ...[0m
 [0m[[0minfo[0m] [0mResolving net.java.dev.jna#platform;3.4.0 ...[0m
@@ -160,6 +212,11 @@
 [0m[[0minfo[0m] [0mResolving com.typesafe.akka#akka-testkit_2.11;2.3.8 ...[0m
 [0m[[0minfo[0m] [0mResolving net.contentobjects.jnotify#jnotify;0.94-play-1 ...[0m
 [0m[[0minfo[0m] [0mDone updating.[0m
+[0m[[33mwarn[0m] [0mScala version was updated by one of library dependencies:[0m
+[0m[[33mwarn[0m] [0m	* org.scala-lang:scala-library:(2.11.6, 2.11.5, 2.11.0) -> 2.11.7[0m
+[0m[[33mwarn[0m] [0mTo force scalaVersion, add the following:[0m
+[0m[[33mwarn[0m] [0m	ivyScala := ivyScala.value map { _.copy(overrideScalaVersion = true) }[0m
+[0m[[33mwarn[0m] [0mRun 'evicted' to see detailed eviction warnings[0m
 [0m[[0minfo[0m] [0m[0m
 [0m[[0minfo[0m] [0m[35m--- (Running the application, auto-reloading is enabled) ---[0m[0m
 [0m[[0minfo[0m] [0m[0m
@@ -167,9 +224,11 @@
 [0m[[0minfo[0m] [0m[0m
 [0m[[0minfo[0m] [0m[32m(Server started, use Ctrl+D to stop and go back to the console...)[0m[0m
 [0m[[0minfo[0m] [0m[0m
-[0m[[31merror[0m] [0mapplication - [0m
+[0m[[0minfo[0m] [0mCompiling 1 Java source to /Users/ramyaky/activator-1.3.7-minimal/CMPE297Project/target/scala-2.11/classes...[0m
+[0m[[0minfo[0m] [0m- play.api.Play - Application started (Dev)[0m
+[0m[[31merror[0m] [0m- application - [0m
 [0m[[0minfo[0m] [0m[0m
-[0m[[0minfo[0m] [0m! @6obakad5c - Internal server error, for (GET) [/] ->[0m
+[0m[[0minfo[0m] [0m! @6od59kpdj - Internal server error, for (POST) [/login] ->[0m
 [0m[[0minfo[0m] [0m [0m
 [0m[[0minfo[0m] [0mplay.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[PrivilegedActionException: null]][0m
 [0m[[0minfo[0m] [0m	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:265) ~[play_2.11-2.4.4.jar:2.4.4][0m
@@ -177,30 +236,69 @@
 [0m[[0minfo[0m] [0m	at play.core.server.Server$class.logExceptionAndGetResult$1(Server.scala:50) [play-server_2.11-2.4.4.jar:2.4.4][0m
 [0m[[0minfo[0m] [0m	at play.core.server.Server$$anonfun$getHandlerFor$4.apply(Server.scala:59) [play-server_2.11-2.4.4.jar:2.4.4][0m
 [0m[[0minfo[0m] [0m	at play.core.server.Server$$anonfun$getHandlerFor$4.apply(Server.scala:57) [play-server_2.11-2.4.4.jar:2.4.4][0m
-[0m[[0minfo[0m] [0m	at scala.util.Either$RightProjection.flatMap(Either.scala:522) [scala-library-2.11.6.jar:na][0m
+[0m[[0minfo[0m] [0m	at scala.util.Either$RightProjection.flatMap(Either.scala:522) [scala-library-2.11.7.jar:na][0m
 [0m[[0minfo[0m] [0m	at play.core.server.Server$class.getHandlerFor(Server.scala:57) [play-server_2.11-2.4.4.jar:2.4.4][0m
 [0m[[0minfo[0m] [0m	at play.core.server.NettyServer.getHandlerFor(NettyServer.scala:33) [play-netty-server_2.11-2.4.4.jar:2.4.4][0m
 [0m[[0minfo[0m] [0m	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$8.apply(PlayDefaultUpstreamHandler.scala:132) [play-netty-server_2.11-2.4.4.jar:2.4.4][0m
 [0m[[0minfo[0m] [0m	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$8.apply(PlayDefaultUpstreamHandler.scala:132) [play-netty-server_2.11-2.4.4.jar:2.4.4][0m
+[0m[[0minfo[0m] [0m	at scala.util.Either.fold(Either.scala:99) [scala-library-2.11.7.jar:na][0m
+[0m[[0minfo[0m] [0m	at play.core.server.netty.PlayDefaultUpstreamHandler.messageReceived(PlayDefaultUpstreamHandler.scala:120) [play-netty-server_2.11-2.4.4.jar:2.4.4][0m
+[0m[[0minfo[0m] [0m	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70) [netty-3.10.4.Final.jar:na][0m
+[0m[[0minfo[0m] [0m	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564) [netty-3.10.4.Final.jar:na][0m
+[0m[[0minfo[0m] [0m	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791) [netty-3.10.4.Final.jar:na][0m
+[0m[[0minfo[0m] [0m	at com.typesafe.netty.http.pipelining.HttpPipeliningHandler.messageReceived(HttpPipeliningHandler.java:62) [netty-http-pipelining-1.1.4.jar:na][0m
+[0m[[0minfo[0m] [0m	at org.jboss.netty.channel.SimpleChannelHandler.handleUpstream(SimpleChannelHandler.java:88) [netty-3.10.4.Final.jar:na][0m
+[0m[[0minfo[0m] [0m	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564) [netty-3.10.4.Final.jar:na][0m
+[0m[[0minfo[0m] [0m	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791) [netty-3.10.4.Final.jar:na][0m
+[0m[[0minfo[0m] [0m	at org.jboss.netty.handler.codec.http.HttpContentDecoder.messageReceived(HttpContentDecoder.java:108) [netty-3.10.4.Final.jar:na][0m
+[0m[[0minfo[0m] [0m	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70) [netty-3.10.4.Final.jar:na][0m
+[0m[[0minfo[0m] [0m	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564) [netty-3.10.4.Final.jar:na][0m
+[0m[[0minfo[0m] [0m	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791) [netty-3.10.4.Final.jar:na][0m
+[0m[[0minfo[0m] [0m	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:296) [netty-3.10.4.Final.jar:na][0m
+[0m[[0minfo[0m] [0m	at org.jboss.netty.handler.codec.frame.FrameDecoder.unfoldAndFireMessageReceived(FrameDecoder.java:459) [netty-3.10.4.Final.jar:na][0m
+[0m[[0minfo[0m] [0m	at org.jboss.netty.handler.codec.replay.ReplayingDecoder.callDecode(ReplayingDecoder.java:536) [netty-3.10.4.Final.jar:na][0m
+[0m[[0minfo[0m] [0m	at org.jboss.netty.handler.codec.replay.ReplayingDecoder.messageReceived(ReplayingDecoder.java:435) [netty-3.10.4.Final.jar:na][0m
+[0m[[0minfo[0m] [0m	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70) [netty-3.10.4.Final.jar:na][0m
+[0m[[0minfo[0m] [0m	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564) [netty-3.10.4.Final.jar:na][0m
+[0m[[0minfo[0m] [0m	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:559) [netty-3.10.4.Final.jar:na][0m
+[0m[[0minfo[0m] [0m	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:268) [netty-3.10.4.Final.jar:na][0m
+[0m[[0minfo[0m] [0m	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:255) [netty-3.10.4.Final.jar:na][0m
+[0m[[0minfo[0m] [0m	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:88) [netty-3.10.4.Final.jar:na][0m
+[0m[[0minfo[0m] [0m	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:108) [netty-3.10.4.Final.jar:na][0m
+[0m[[0minfo[0m] [0m	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337) [netty-3.10.4.Final.jar:na][0m
+[0m[[0minfo[0m] [0m	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:89) [netty-3.10.4.Final.jar:na][0m
+[0m[[0minfo[0m] [0m	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178) [netty-3.10.4.Final.jar:na][0m
+[0m[[0minfo[0m] [0m	at org.jboss.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108) [netty-3.10.4.Final.jar:na][0m
+[0m[[0minfo[0m] [0m	at org.jboss.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42) [netty-3.10.4.Final.jar:na][0m
+[0m[[0minfo[0m] [0m	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_65][0m
+[0m[[0minfo[0m] [0m	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_65][0m
+[0m[[0minfo[0m] [0m	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_65][0m
 [0m[[0minfo[0m] [0mCaused by: java.security.PrivilegedActionException: null[0m
 [0m[[0minfo[0m] [0m	at java.security.AccessController.doPrivileged(Native Method) ~[na:1.8.0_65][0m
 [0m[[0minfo[0m] [0m	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:39) ~[na:na][0m
 [0m[[0minfo[0m] [0m	at play.runsupport.Reloader.reload(Reloader.scala:321) ~[na:na][0m
 [0m[[0minfo[0m] [0m	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1.apply(DevServerStart.scala:113) ~[play-server_2.11-2.4.4.jar:2.4.4][0m
 [0m[[0minfo[0m] [0m	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1.apply(DevServerStart.scala:111) ~[play-server_2.11-2.4.4.jar:2.4.4][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at java.util.concurrent.ForkJoinTask$RunnableExecuteAction.exec(ForkJoinTask.java:1402) ~[na:1.8.0_65][0m
-[0m[[0minfo[0m] [0m	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289) ~[na:1.8.0_65][0m
-[0m[[0minfo[0m] [0m	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056) ~[na:1.8.0_65][0m
+[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library-2.11.7.jar:na][0m
+[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library-2.11.7.jar:na][0m
+[0m[[0minfo[0m] [0m	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40) ~[akka-actor_2.11-2.3.13.jar:na][0m
+[0m[[0minfo[0m] [0m	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:397) ~[akka-actor_2.11-2.3.13.jar:na][0m
+[0m[[0minfo[0m] [0m	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library-2.11.7.jar:na][0m
+[0m[[0minfo[0m] [0m	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library-2.11.7.jar:na][0m
+[0m[[0minfo[0m] [0m	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library-2.11.7.jar:na][0m
+[0m[[0minfo[0m] [0m	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library-2.11.7.jar:na][0m
 [0m[[0minfo[0m] [0mCaused by: java.util.concurrent.TimeoutException: Futures timed out after [300000 milliseconds][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Promise$DefaultPromise.ready(Promise.scala:219) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Promise$DefaultPromise.result(Promise.scala:223) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.Await$$anonfun$result$1.apply(package.scala:190) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.BlockContext$DefaultBlockContext$.blockOn(BlockContext.scala:53) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.Await$.result(package.scala:190) ~[scala-library-2.11.6.jar:na][0m
+[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Promise$DefaultPromise.ready(Promise.scala:219) ~[scala-library-2.11.7.jar:na][0m
+[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Promise$DefaultPromise.result(Promise.scala:223) ~[scala-library-2.11.7.jar:na][0m
+[0m[[0minfo[0m] [0m	at scala.concurrent.Await$$anonfun$result$1.apply(package.scala:190) ~[scala-library-2.11.7.jar:na][0m
+[0m[[0minfo[0m] [0m	at scala.concurrent.BlockContext$DefaultBlockContext$.blockOn(BlockContext.scala:53) ~[scala-library-2.11.7.jar:na][0m
+[0m[[0minfo[0m] [0m	at scala.concurrent.Await$.result(package.scala:190) ~[scala-library-2.11.7.jar:na][0m
 [0m[[0minfo[0m] [0m	at play.forkrun.ForkRun$$anonfun$askForReload$1.apply(ForkRun.scala:127) ~[na:na][0m
 [0m[[0minfo[0m] [0m	at play.forkrun.ForkRun$$anonfun$askForReload$1.apply(ForkRun.scala:125) ~[na:na][0m
 [0m[[0minfo[0m] [0m	at play.runsupport.Reloader$$anonfun$reload$1.apply(Reloader.scala:323) ~[na:na][0m
 [0m[[0minfo[0m] [0m	at play.runsupport.Reloader$$anon$3.run(Reloader.scala:43) ~[na:na][0m
-[0m[[0minfo[0m] [0m	at java.security.AccessController.doPrivileged(Native Method) ~[na:1.8.0_65][0m
+[0m[[0minfo[0m] [0m	... 13 common frames omitted[0m
+[0m[[0minfo[0m] [0mJVM exiting, shutting down Play fork run ...[0m
+[0m[[0minfo[0m] [0mStopping Play fork run ...[0m
+[0m[[0minfo[0m] [0mPlay fork run already stopped ...[0m
+[0m[[0minfo[0m] [0mForked Play process exited with status: 130[0m
