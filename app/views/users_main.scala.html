@@ -3,7 +3,7 @@
 @main("AROID:Explore,Visualize") {
 
 <!DOCTYPE html>
-<html lan="en">
+<!-- html lan="en">
 <head>
 <title>User Screen</title>
   <meta charset="utf-8">
@@ -20,7 +20,7 @@
   </style>
 </head>
 
-<body>
+<body -->
 <script type="text/javascript">
 function redirectfunc(category)
 {//alert(category);
@@ -39,23 +39,15 @@ window.location = '/user_products/'+category;
         <li class="active"><a href="#">CATALOG</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> User</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span>USER</a></li>
         <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> SIGN OUT</a></li>
       </ul>
     </div>
   </div>
 </nav>
-
-<!--  <div class="container">
- <h4>Product Catagories:</h4> 
- <br> 
- <div class="row">
- 
--->
-
 <div id="gallery" class ="bg-1">
 <div class="container">
-<h3 class = "text-center"> SELECT A CATEGORY</h3>
+<h3 class = "text-center">SELECT A CATEGORY</h3>
   
   @for(category <- categoryArray) { 
  
@@ -66,63 +58,6 @@ window.location = '/user_products/'+category;
   }
 </div>
 </div>
- 
-<!-- @for(category <- categoryArray) {
- <div class="col-sm-4">
-      <div class="panel panel-default">
-        <div class="panel-heading">@category</div>
-        <div class="panel-body"><img src="img/2.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-      </div>
-    </div>
- }
- 
-    <div class="row">
-    <div class="col-sm-4">
-      <div class="panel panel-default">
-        <div class="panel-heading">Living Room</div>
-        <div class="panel-body"><img src="img/2.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-      </div>
-    </div>
-    <div class="col-sm-4"> 
-      <div class="panel panel-default">
-        <div class="panel-heading">Bed & Bath</div>
-        <div class="panel-body"><img src="img/image1.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-      </div>
-    </div>
-    <div class="col-sm-4"> 
-      <div class="panel panel-default">
-        <div class="panel-heading">Kitchen & Appliances</div>
-        <div class="panel-body"><img src="img/portfolio_pic5.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="panel panel-default">
-        <div class="panel-heading">Garden</div>
-        <div class="panel-body"><img src="img/portfolio_pic3.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-      </div>
-    </div>
-
-    <div class="col-sm-4">
-      <div class="panel panel-default">
-        <div class="panel-heading">Electronics</div>
-        <div class="panel-body"><img src="img/portfolio_pic3.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-      </div>
-    </div>
-    <div class="col-sm-4"> 
-      <div class="panel panel-default">
-        <div class="panel-heading">Toys & Gifts</div>
-        <div class="panel-body"><img src="img/portfolio_pic7.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-      </div>
-    </div>
-    <div class="col-sm-4"> 
-      <div class="panel panel-default">
-        <div class="panel-heading">Smart Home</div>
-        <div class="panel-body"><img src="img/image3.jpg" class="img-responsive" style="width:100%" alt="Image"></div> 
-      </div>
-    </div>  -->
-  </div>
+</div>
 </div><br><br>
-
-</body>
-</html>
 }

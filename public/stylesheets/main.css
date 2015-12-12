@@ -42,9 +42,9 @@
     background: #ffcc33;/*yellow*/
     color: #bdbdbd;
     margin-left: 30px;
-    margin-right:30px;
-   
+    margin-right:30px;   
 }
+
 .bg-1 h3 {color: #fff;}
 .bg-1 p {font-style: italic;}
 
@@ -61,7 +61,7 @@
     border: 3px solid;
 }
 
-.btn {
+.butn {
       padding: 10px 20px ;
       background-color: #ffcc33;
       color: #f1f1f1;
@@ -171,7 +171,13 @@ footer a:hover {
   color: #fff;
   background-color: #ffcc33;
   border-color: #ddd;
-  
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+}
+
+.panel-heading a {
+	color: #fff;
 }
 
 .green{
@@ -208,4 +214,60 @@ tr th:last-child {
 .inbox-heading {
  
      margin-left: 50px;
+}
+
+.container-signUp{
+	  background-color: #ffcc33;
+      margin-left: 350px;
+      margin-right: 350px;
+  }
+  
+.form-input {
+     padding:20px;
+     margin-right:50px; 
+     margin-left: 50px;
+}
+
+.form-heading {
+     padding:20px;
+     margin-right: 100px; 
+     margin-left: 160px;
+}
+
+.button-signup{
+	width:90px;
+	height:40px;
+	color: #fff;
+    background-color: #3D3C3A;
+    border-color: #3D3C3A;
+    border-radius:10px;
+	margin-left:130px;
+}
+
+.button-search{
+	width:40px;
+	height:35px;
+	color: #fff;
+    background-color: #3D3C3A;
+    border-color: #3D3C3A;
+    border-radius:10px;
+    margin-left:120px;
+	
+}
+
+.bg-2 {
+    background: #ffcc33;/*yellow*/
+    color: #bdbdbd;
+    margin-left: 30px;
+    margin-right:30px;   
+    margin-below: 20px;
+    padding-below: 30px;
+}
+
+.bg-2 h1{
+	color: #fff;
+}
+
+.searchbar {
+	padding-top: 15px;
 }

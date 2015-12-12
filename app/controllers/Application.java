@@ -19,6 +19,7 @@ import org.jongo.Aggregate.ResultsIterator;
 import org.jongo.Jongo;
 import org.jongo.MongoCursor;
 
+import models.SignUpForm;
 import models.Users;
 import models.LoginForm;
 import models.ProductDetails;
@@ -41,6 +42,28 @@ public class Application extends Controller {
 	public Result adminRetailerCatalog() {
 		return ok(adminRetailerCatalog.render("Your new application is ready."));
 
+	}
+	
+	public Result viewSignUpForm(){
+		Form<SignUpForm> signUpForm = Form.form(SignUpForm.class);
+		return ok(signup.render(signUpForm));
+	}
+	
+	public Result signUp(){
+		Form<SignUpForm> signUp = Form.form(SignUpForm.class);
+		SignUpForm form = signUp.bindFromRequest().get();
+		System.out.println(form.getFirstName());
+		System.out.println(form.getRole());
+		Users newUser = new Users(form.getFirstName(),
+				form.getLastName(), form.getRole(),
+				form.getEmailId(),  form.getContactNum(),
+				form.getUserName(), form.getPassword(),
+				form.getRetailer(), "pending");
+		
+		System.out.println(newUser.userName);
+		newUser.insert();
+		return viewLogin();
+		
 	}
 
 	public Result imageCatalog(String id) {
@@ -91,7 +114,7 @@ public class Application extends Controller {
 	public Result viewLogin() {
 		Form<LoginForm> formData = Form.form(LoginForm.class);
 		System.out.println("Status variable : " + status);
-		return ok(login.render(formData, status));
+		return ok(login.render(formData,status));
 	}
 
 	public Result login() {

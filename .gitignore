@@ -3,6 +3,8 @@
 .cache
 .eclipse
 .sbtserver/
+.classpath/
+.DS_Store
 /db
 bin/
 dist/

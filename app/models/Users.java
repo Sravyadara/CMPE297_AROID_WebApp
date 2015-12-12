@@ -20,7 +20,6 @@ public class Users {
 	
 	 @MongoId  
 	public  ObjectId id;
-	public String customerId;
 	public String firstName;
 	public String lastName;
 	public String role;
@@ -35,6 +34,18 @@ public class Users {
 	public Users(){
 		
 	}
+	
+	 public Users(String firstName,String lastName,String role,String emailId,long contactNum,String userName,String password,String retailer,String status){
+			this.firstName = firstName;
+			this.lastName = lastName;
+			this.role = role;
+			this.emailId = emailId;
+			this.contactNum = contactNum;
+			this.userName = userName;
+			this.password = password;
+			this.retailer = retailer;
+			this.status = status;
+		}
 	
 	public void insert() {
 	   users().save(this);

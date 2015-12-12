@@ -10,6 +10,8 @@ GET     /adminRetailerCatalog                         controllers.Application.ad
 GET     /adminInbox                                   controllers.Application.adminInbox()
 GET     /adminCatalog/:id                             controllers.Application.imageCatalog(id: String)
 GET    /updateUserStatus/:status/:userName            controllers.Application.updateUserStatus(status: String,userName: String)
+GET    /viewSignUp                                    controllers.Application.viewSignUpForm() 
+POST    /signUp                                       controllers.Application.signUp()
 
 #Sravya Reddys changes
 GET     /users_main                           controllers.Application.listofCategories()
@@ -22,6 +24,7 @@ GET     /viewLogin                  controllers.Application.viewLogin()
 GET 	/logout						controllers.Application.logout()
 POST    /login                      controllers.Application.login()
 
+# Ramya's changes
 GET		/retailerCategories				controllers.Application.showRetailerCategories()
 GET     /retailerProducts/:categoryName				controllers.Application.showRetailerProducts(categoryName:String )
 GET 	/retailerAddProduct				controllers.Application.showProductFormData()

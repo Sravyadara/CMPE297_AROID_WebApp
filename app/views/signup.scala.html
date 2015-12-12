@@ -1,0 +1,88 @@
+@(signUpFormData: Form[models.SignUpForm])
+
+@import helper._
+
+@main("SIGN UP") {
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand text center" href="#">AROID</a>
+    </div>
+    </div>
+</nav>
+<br>
+<br>
+<div class= "container-signUp">
+@form(action = routes.Application.signUp(), 'class -> "form-horizontal", 'enctype -> "multipart/form-data") {
+  <form role="form">
+  <div class="form-heading">
+  <h4>SIGN UP NOW!!</h4>
+</div>
+ 
+  <div class="form-input">
+    <input type="text" class="form-control" 
+                       name="@signUpFormData("firstName").name"
+        				id="@signUpFormData("firstName").id" 
+        				value="@signUpFormData("firstName").value"
+        				 placeholder="First Name">
+    <br>
+    <input type="text" class="form-control" 
+                        name="@signUpFormData("lastName").name"
+        				id="@signUpFormData("lastName").id" 
+        				value="@signUpFormData("lastName").value"
+        				placeholder="Last Name">
+    <br>
+    <input type="email" class="form-control"
+                        name="@signUpFormData("emailId").name"
+        				id="@signUpFormData("emailId").id" 
+        				value="@signUpFormData("emailId").value"
+        				placeholder="Email Id">
+    <br>
+    <input type="tel" class="form-control" 
+                        name="@signUpFormData("contactNum").name"
+        				id="@signUpFormData("contactNum").id" 
+        				value="@signUpFormData("contactNum").value"
+        				placeholder="contact Num">
+    <br>
+    <input type="password" class="form-control" 
+                          name="@signUpFormData("password").name"
+        				  id="@signUpFormData("password").id" 
+        				  value="@signUpFormData("password").value"
+        				  placeholder="Password">
+    <br>
+    <input type="text" class="form-control"
+                          name="@signUpFormData("retailer").name"
+        				  id="@signUpFormData("retailer").id" 
+        				  value="@signUpFormData("retailer").value"
+        				  placeholder="Retailer">
+        				  
+      <br>
+    
+     <div class="col-sm-8"> 
+    				<select name="@signUpFormData("role").name"
+    						id="@signUpFormData("role").id"  
+    						value="@signUpFormData("role").value">
+    				    <option>---Select User Role---</option>
+    					<option>Admin</option>
+    					<option>Retailer</option>
+    					<option>Customer</option>
+    					
+    				</select>
+    </div>
+ 
+  <br>
+  <br>
+
+  <button type="submit" class="button-signup">Submit</button>
+  <br>
+  <br>
+
+  
+</form>
+}
+</div>
+
+ <script src="dist/js/bootstrap-checkbox.min.js" defer></script>
+
+}
