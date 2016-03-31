@@ -15,6 +15,7 @@ public class ProductDetails {
 	public String wt3;
 	public String image;
 	public String retailer;
+	public String type;   // for similar items
 	
 	public ProductDetails() {
 		
@@ -85,6 +86,13 @@ public class ProductDetails {
 	}
 	
 	
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
 	
 	
 	

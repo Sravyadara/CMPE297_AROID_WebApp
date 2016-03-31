@@ -123,9 +123,11 @@ public class Application extends Controller {
 
 		//UserInfo userInfo = UserInfo.findByName(user.getUsername())
 		System.out.println("Current user session: "+ login.getUsername());
+		System.out.println("user password : " + login.getPassword());
 		session("username", login.getUsername());
 		
 		Users user = Users.findByName(login.getUsername(), login.getPassword());
+		System.out.println("User value : " + user);
 		if(user != null) {
 			if(user.role.equalsIgnoreCase("admin")){
 				return ok(adminRetailerCatalog.render("Your new application is ready."));
@@ -271,22 +273,23 @@ public class Application extends Controller {
 
 	public Result productdetailsfunc(String categoryname, String prdid){
 		//int prodid =Integer.parseInt(prdid);
+		System.out.println("&&& Inside productdetailsfunction &&&");
 		String retailer="";
 		String description="";
 		String price="";
 		String imageurl= "";
 		String qrcode="";
 		String name="";
-
-		Products p = new Products();
+		String type="";//---for similar items
+        Products p = new Products();
 		MongoCursor<Products> m = p.findByName(categoryname);
-		List<String> productname = new ArrayList<String>();
 		while(m.hasNext()){
 
 			List<ProductDetails> prodDetails  = m.next().products;
+			System.out.println(" After prodDetails :*******" + prodDetails.size());
 			for(ProductDetails pd : prodDetails){
-				//System.out.println("Category Name : " + categoryname);
-				//System.out.println("Products ide : " + prdid);
+				
+				
 				if(pd.getProductid().equalsIgnoreCase(prdid))
 				{ 	
 					retailer = pd.getRetailer();
@@ -295,16 +298,36 @@ public class Application extends Controller {
 					imageurl= pd.getImage();
 					qrcode= pd.getQrcode();
 					name = pd.getName();
-
+                    type = pd.getType();
+                    System.out.println("Inside product details type : "+ type);
 					String message = 	description +"/"+ price +"/"+ retailer;
 					System.out.println("Message : " + message);
 
 				}
 			}
 		}
-		return ok(product_screen.render(description,price,retailer,imageurl,qrcode,name));
-	}
+		
+		Products p1 = new Products();
+		MongoCursor<Products> m1 = p1.findByName(categoryname);
+		List<ProductDetails> proddetails = new ArrayList<ProductDetails>();
+		while(m1.hasNext()){
 
+			List<ProductDetails> productDetails1  = m1.next().products;
+			for(ProductDetails pd : productDetails1){
+				
+				System.out.println(" Inside carousal function ");
+				if((pd.getType().equalsIgnoreCase(type)) && !pd.getProductid().equalsIgnoreCase(prdid)){
+					proddetails.add(pd);
+					System.out.println(" Inside carousal if condition ");
+					System.out.print(" product type: " + pd.type + "product ID: " +pd.productid);
+				}
+			//proddetails.add(pd);
+			}
+		}
+		
+		return ok(product_screen.render(description,price,retailer,imageurl,qrcode,name,proddetails));
+	}
+	
 	public Result searchfunc(String categoryname,String searchvalue){
 
 		List<ProductDetails> searchdetails = new ArrayList<ProductDetails>();

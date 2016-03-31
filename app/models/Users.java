@@ -70,6 +70,7 @@ public class Users {
 	}
 	
 	public static Users findByName(String userName, String userPwd){
+		System.out.println("Calling query");
 		return users().findOne("{userName: #, password:#}", userName, userPwd).as(Users.class);
 //		if(u != null) {
 //			return u.role;
