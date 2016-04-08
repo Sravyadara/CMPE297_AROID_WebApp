@@ -195,6 +195,7 @@ public class Application extends Controller {
 
 			ProductForm data = Form.form(ProductForm.class).bindFromRequest().get();
 			cn = data.productCategory;
+			System.out.println("Category Value cn : " + cn);
 			UUID productId = UUID.randomUUID();
 			if(p.findCategory(data.productCategory) != null){
 				p.updateCategory(productId, data.productCategory, data.productName, data.productDescription, data.productPrice, qrUrl, imageUrl, session("retailerName"));
@@ -270,8 +271,8 @@ public class Application extends Controller {
 		}
 		return ok(user_products.render(proddetails));
 	}
-
-	public Result productdetailsfunc(String categoryname, String prdid){
+//Sravya Reddy
+	public Result productdetailsfunc(String categoryname, String prdid,String liked){
 		//int prodid =Integer.parseInt(prdid);
 		System.out.println("&&& Inside productdetailsfunction &&&");
 		String retailer="";
@@ -281,6 +282,7 @@ public class Application extends Controller {
 		String qrcode="";
 		String name="";
 		String type="";//---for similar items
+		String productid="";
         Products p = new Products();
 		MongoCursor<Products> m = p.findByName(categoryname);
 		while(m.hasNext()){
@@ -292,6 +294,7 @@ public class Application extends Controller {
 				
 				if(pd.getProductid().equalsIgnoreCase(prdid))
 				{ 	
+					productid=pd.getProductid();
 					retailer = pd.getRetailer();
 					description = pd.getDescription();
 					price = Integer.toString(pd.getPrice());
@@ -324,10 +327,26 @@ public class Application extends Controller {
 			//proddetails.add(pd);
 			}
 		}
-		
-		return ok(product_screen.render(description,price,retailer,imageurl,qrcode,name,proddetails));
+		if(liked.equalsIgnoreCase("true")){
+			System.out.println("****Liked*******");	
+			String username=session("username");
+			System.out.println("User from session: "+username);
+			Users users = new Users();
+	        users = Users.findById(username);
+	        System.out.println("Interested list size: "+users.interested.size());
+	        users.interested.add(prdid);
+	        users.update();
+	        
+			
+		}
+		return ok(product_screen.render(productid,description,price,retailer,imageurl,qrcode,name,proddetails));
 	}
-	
+	//Sravya Reddy
+	/*public void likeFunctionPressed(String likedItem){
+		System.out.println("Liked*******");
+		//return ok();
+		
+	}*/
 	public Result searchfunc(String categoryname,String searchvalue){
 
 		List<ProductDetails> searchdetails = new ArrayList<ProductDetails>();

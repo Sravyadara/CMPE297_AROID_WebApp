@@ -1,5 +1,7 @@
 package models;
 
+import java.util.ArrayList;
+
 import org.bson.types.ObjectId;
 import org.jongo.FindOne;
 import org.jongo.MongoCollection;
@@ -29,6 +31,7 @@ public class Users {
 	public String password;
 	public String retailer;
 	public String status;
+	public ArrayList<String> interested;
 	
 	
 	public Users(){
@@ -45,6 +48,14 @@ public class Users {
 			this.password = password;
 			this.retailer = retailer;
 			this.status = status;
+			this.interested = new ArrayList<String>();
+		}
+	 public ArrayList getInterested() {
+			return interested;
+		}
+
+		public void setInterested(ArrayList<String> type) {
+			this.interested = interested;
 		}
 	
 	public void insert() {

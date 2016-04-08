@@ -14,9 +14,9 @@ GET    /viewSignUp                                    controllers.Application.vi
 POST    /signUp                                       controllers.Application.signUp()
 
 #Sravya Reddys changes
-GET     /users_main                           controllers.Application.listofCategories()
+GET     /users_main                                   controllers.Application.listofCategories()
 GET     /user_products/:category                         controllers.Application.listofProducts(category: String)
-GET     /product_screen/:category/:id                           controllers.Application.productdetailsfunc(category: String,id: String)
+GET     /product_screen/:category/:id/:liked                           controllers.Application.productdetailsfunc(category: String,id: String,liked: String)
 GET     /user_products/search/:category/:id                           controllers.Application.searchfunc(category: String,id: String)
 
 # Susmitha's changes
