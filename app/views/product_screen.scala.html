@@ -1,5 +1,5 @@
 @import models.ProductDetails
-@(productid:String,description:String,price:String,retailer:String,imageurl:String,qrcode:String,name:String,list:List[ProductDetails])
+@(productid:String,description:String,price:String,retailer:String,imageurl:String,qrcode:String,name:String,list:List[ProductDetails],like:String)
 @main("AROID:Explore,Visualize") {
 
 <!DOCTYPE html>
@@ -58,10 +58,9 @@ function prodredirectfunc(category)
 
 function likeFunctionPressed(productidvalue)
 { 
-     alert(productidvalue);
      liked="true";
      window.location = '/product_screen/'+cat+'/'+productidvalue+'/'+liked;
-    // window.location = '/user_products/likeitem/'+productidvalue;
+    
 }
 
 </script>
@@ -131,7 +130,7 @@ $(document).ready( function() {
       
       </div>
       
-        <button type="button" onclick='likeFunctionPressed("@productid")' class="btn btn-default btn-sm" >
+        <button type="button" onclick='likeFunctionPressed("@productid")' class="btn btn-default btn-sm" @like >
           <span class="glyphicon glyphicon-thumbs-up"></span> Like
         </button>
       
