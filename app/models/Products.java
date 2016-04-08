@@ -46,10 +46,10 @@ public class Products {
 		products().save(this);
 	}
 	
-	public void updateCategory(UUID productId, String categoryName, String productName, String productDescription, int productPrice, String productQRCode, String productImage, String retailerName) {
+	public void updateCategory(String productId, String categoryName, String productName, String productDescription, String productType, int productPrice, String productQRCode, String productImage, String retailerName) {
 		
 		products().update("{categoryname: #}", categoryName)
-			.with("{$push: {products: {productid:#, name: #, Description: #, price: #, qrcode: #, image:#, retailer: #}}}", productId, productName, productDescription, productPrice, productQRCode, productImage, retailerName);
+			.with("{$push: {products: {productid:#, name: #, Description: #, price: #, type: #, qrcode: #, image:#, retailer: #}}}", productId, productName, productDescription, productPrice, productType, productQRCode, productImage, retailerName);
 	}
 	
 	public void remove() {

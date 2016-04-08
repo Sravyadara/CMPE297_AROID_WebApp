@@ -8,6 +8,7 @@ public class ProductForm {
 	public String productDescription = "";
 	public Integer productPrice = 0;
 	public String productCategory = "";
+	public String productType = "";
 //	public FilePart productQRCode;
 //	public String productWT3;
 	

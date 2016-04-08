@@ -11,7 +11,7 @@
     </div>
     <div>
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">CATALOG</a></li>
+        <li class="active"><a href="@routes.Application.showRetailerCategories()">CATALOG</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#"><span class="glyphicon glyphicon-user"></span> RETAILER</a></li>
@@ -55,7 +55,7 @@
       			</div>
     		</div>
    			<div class="form-group">
-      			<label class="control-label col-sm-3" for="price"> product Price:</label>
+      			<label class="control-label col-sm-3" for="price"> Product Price:</label>
       			<div class="col-sm-7">          
         			<input type="number" class="form-control" 
         				name="@productFormData("productPrice").name"
@@ -66,6 +66,16 @@
     		</div>
     		
     		
+    		<div class="form-group">
+      			<label class="control-label col-sm-3">Specify Type:</label>
+      			<div class="col-sm-7">
+        			<input type="text" class="form-control" 
+        					name="@productFormData("productType").name"
+        					id="@productFormData("productType").id" 
+        					value="@productFormData("productType").value" 
+        					placeholder="Name">
+      			</div>
+    		</div>
     		
     		<div class="form-group">
     			<label class="control-label col-sm-3" for="categoryname"> Product Category:</label>
@@ -73,7 +83,7 @@
     				<select name="@productFormData("productCategory").name"
     						id="@productFormData("productCategory").id" 
     						value="@productFormData("productCategory").value">
-    					<option>Living Room</option>
+    					<option>LivingRoom</option>
     					<option>Kitchen</option>
     					<option>Dining</option>
     					<option>Bed & Bath</option>

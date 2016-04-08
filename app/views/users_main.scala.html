@@ -36,11 +36,11 @@ window.location = '/user_products/'+category;
     <div>
       <ul class="nav navbar-nav">
        <li ><a href="http://localhost:9000/" >Home</a></li>
-        <li class="active"><a href="#">CATALOG</a></li>
+        <li class="active"><a href="@routes.Application.listofCategories()">CATALOG</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#"><span class="glyphicon glyphicon-user"></span>USER</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> SIGN OUT</a></li>
+        <li><a href="@routes.Application.logout()"><span class="glyphicon glyphicon-log-in"></span> SIGN OUT</a></li>
       </ul>
     </div>
   </div>

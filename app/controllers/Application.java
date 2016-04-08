@@ -1,6 +1,7 @@
 package controllers;
 
 import play.*;
+
 import play.data.Form;
 import play.mvc.*;
 import play.mvc.Http.MultipartFormData;
@@ -13,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.UUID;
+import java.nio.ByteBuffer;
 
 import org.jongo.Aggregate;
 import org.jongo.Aggregate.ResultsIterator;
@@ -170,6 +172,12 @@ public class Application extends Controller {
 
 		return ok(retailer_categories.render(categoryArray));
 	}
+	
+	public String shortUUID() {
+		  UUID uuid = UUID.randomUUID();
+		  long l = ByteBuffer.wrap(uuid.toString().getBytes()).getLong();
+		  return Long.toString(l, Character.MAX_RADIX);
+	}
 
 	public Result postProductFormData() {
 		Products p = new Products();
@@ -187,21 +195,23 @@ public class Application extends Controller {
 			String wt3COntentType = fpwt3.getContentType();
 			qrfile = fpqr.getFile();
 			imagefile = fpwt3.getFile();
-			S3Handler s3handler = new S3Handler();
+			/*S3Handler s3handler = new S3Handler();
 			qrUrl = s3handler.uploadImageFile(qrfile, qrfileName);
-			imageUrl = s3handler.uploadImageFile(imagefile, imagefileName);
+			imageUrl = s3handler.uploadImageFile(imagefile, imagefileName);*/
+			qrUrl = "";
+			imageUrl = "";
 			System.out.println("Printing qr url : " + qrUrl);
 			System.out.println("Printing qr url : " + imageUrl);
 
 			ProductForm data = Form.form(ProductForm.class).bindFromRequest().get();
 			cn = data.productCategory;
-			UUID productId = UUID.randomUUID();
+			String productId = cn.toLowerCase().substring(0, 1) + "-" + shortUUID();
 			if(p.findCategory(data.productCategory) != null){
-				p.updateCategory(productId, data.productCategory, data.productName, data.productDescription, data.productPrice, qrUrl, imageUrl, session("retailerName"));
+				p.updateCategory(productId, data.productCategory, data.productName, data.productDescription, data.productType, data.productPrice, qrUrl, imageUrl, session("retailerName"));
 			}else {
 				List<ProductDetails> productDetailsArray = new ArrayList<ProductDetails>();
 				ProductDetails productDetails = new ProductDetails();
-				productDetails.setProductid(productId.toString());
+				productDetails.setProductid(productId);
 				productDetails.setName(data.productName);
 				productDetails.setDescription(data.productDescription);
 				productDetails.setPrice(data.productPrice);
