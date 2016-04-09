@@ -61,6 +61,12 @@ public class Products {
 //		//return products().aggregate("[{$unwind: '$products'}, {$match: {'products.retailer': {$eq: #}, 'categoryid' : {$eq: #}}}, {$group: {_id: '$_id', products: {$push: '$products'}}}]", retailerName, categoryId).as(Products.class);
 //	}
 	
+	public static Iterable<Products> findProduct(String pid) {
+		//return products().aggregate("[{$unwind: '$products'}, {$match: {'products.productid': #}},{$project: {products: 1, _id: 0}}]", pid).as(ProductDetails.class);
+		return products().aggregate("{$unwind: '$products'}").and("{$match: {'products.productid': #}}", pid).and("{$group: {_id: '$_id', products: {$push: '$products'}}}").as(Products.class);
+		//System.out.println(p.iterator().next().products.get(0).name);
+	}
+	
 	public MongoCursor<Products> findall(){
 
 		return products().find().as(Products.class);

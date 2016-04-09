@@ -92,6 +92,11 @@ public class Users {
 		
 	}
 	
+	public static MongoCursor<Users> findOtherUsers(String loggedUser) {
+		//return users().find("{userName: {$ne: #}, role: {$ne: 'admin'}}", loggedUser).as(Users.class);
+		return users().find("{userName: {$ne: #}, 'role': 'customer', 'status': 'active'}",loggedUser).as(Users.class);
+	}
+	
 	public void update(){
 		users().update(id).with(this);
 	}

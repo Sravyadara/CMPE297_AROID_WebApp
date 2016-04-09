@@ -1,8 +1,8 @@
 @(message: String)
 
-@main_modified("AROID:Explore,Visualize") {
+@main("AROID:Explore,Visualize") {
 
-  <nav class="navbar1 navbar-default navbar-fixed-top">
+  <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -14,10 +14,10 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li class = "active"><a href="#myPage">HOME</a></li>
-        <li><a href="#services">SERVICES</a></li>
-        <li><a href="#gallery">PRODUCT GALLERY</a></li>
-        <li><a href="#contact">CONTACT US</a></li>
+        <li class = "active"><a id="slideLink" href="#myPage">HOME</a></li>
+        <li><a id="slideLink" href="#services">SERVICES</a></li>
+        <li><a id="slideLink" href="#gallery">PRODUCT GALLERY</a></li>
+        <li><a id="slideLink" href="#contact">CONTACT US</a></li>
         <li><a href="/viewLogin">LOGIN</a></li>
         <li><a href="/viewSignUp">SIGN UP</a></li>
           </ul>

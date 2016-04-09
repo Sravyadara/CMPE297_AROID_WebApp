@@ -11,6 +11,8 @@ import views.productFormData.ProductForm;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 import java.util.UUID;
@@ -260,8 +262,9 @@ public class Application extends Controller {
 		for(String s : p.getCategories("categoryname")) {
 			System.out.println("Category : "+ s);
 		}
-
-		return ok(users_main.render(categoryArray));
+		List<ProductDetails> recommendedProductsList = getRecommendations();
+		System.out.println("Count of recommended items : " + recommendedProductsList.size() );
+		return ok(users_main.render(categoryArray, recommendedProductsList));
 	}
 
 
@@ -379,6 +382,55 @@ public class Application extends Controller {
 
 		}
 		return ok(user_products.render(searchdetails));
+	}
+	
+	public List<ProductDetails> getRecommendations() {
+		System.out.println("Current logged user : " + session("username"));
+		String loggedUser = session("username");
+		Users otherUsers = new Users();
+		Users currentUser = new Users();
+		currentUser = Users.findById(loggedUser);
+		MongoCursor<Users> othersResult = otherUsers.findOtherUsers(loggedUser);
+		System.out.println("Printing count of result : " + othersResult.count());
+		ArrayList<String> currentUserInterested = currentUser.interested;
+		Set<String> recommendationSet = new HashSet<String>();
+		while(othersResult.hasNext()) {
+			ArrayList<String> othersInterested = othersResult.next().interested;
+			ArrayList<String> tempCurrentUserInterested = new ArrayList<String>(currentUserInterested);
+			if( (othersInterested.size() > 0) && (findMatchPercentage(tempCurrentUserInterested, othersInterested) > 30) ) {
+				//System.out.println("Calling for user : " + othersResult.next().userName);
+				System.out.println("Adding user to set");
+				recommendationSet.addAll(othersInterested);
+			}
+		}
+		
+		System.out.println("Printing my hash set value : " + recommendationSet);
+		recommendationSet.removeAll(currentUserInterested);
+		System.out.println("Printing after hash set value : " + recommendationSet);
+		Iterator iterator = recommendationSet.iterator();
+		List<ProductDetails> productDetailsArray = new ArrayList<ProductDetails>();
+		while(iterator.hasNext()) {
+			String pid = (String) iterator.next();
+			System.out.println("Iterator current item : " + pid);
+			
+			Iterable<Products> rsi = Products.findProduct(pid);
+			while(rsi.iterator().hasNext()) {
+				System.out.println("----------- Inside rsi -----------");
+				Products pd = rsi.iterator().next();
+				productDetailsArray.add(pd.products.get(0));
+			}
+		}
+		return productDetailsArray;
+	}
+	
+	public int findMatchPercentage(ArrayList<String> c, ArrayList<String> o) {
+		int initialSize = c.size();
+		c.retainAll(o);
+		if(c.size() > 0) {
+			int matchPercentage = (int) (100 * (c.size() * 1.0 / initialSize ));
+			return matchPercentage; 
+		}
+		return 0;
 	}
 
 }
