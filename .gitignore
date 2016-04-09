@@ -2,6 +2,8 @@
 *.eml
 .cache
 .eclipse
+.classpath
+.settings/
 .sbtserver/
 .classpath/
 .DS_Store
@@ -13,7 +15,10 @@ logs/
 modules/
 project/project/
 project/target/
+project/.sbtserver
 server.pid
 target/
 test-result
 tmp/
+app/views/.DS_Store
+
