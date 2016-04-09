@@ -296,6 +296,7 @@ public class Application extends Controller {
 		String name="";
 		String type="";//---for similar items
 		String productid="";
+		String like="visible";
         Products p = new Products();
 		MongoCursor<Products> m = p.findByName(categoryname);
 		while(m.hasNext()){
@@ -318,6 +319,19 @@ public class Application extends Controller {
                     System.out.println("Inside product details type : "+ type);
 					String message = 	description +"/"+ price +"/"+ retailer;
 					System.out.println("Message : " + message);
+					
+					
+					String username=session("username");
+					System.out.println("User from session: "+username);
+					Users users = new Users();
+			        users = Users.findById(username);
+			        List<String> interestedItems = users.interested;
+					for(String likeItem:interestedItems){
+						if(likeItem.equalsIgnoreCase(productid)){
+							like="disabled";
+							System.out.println("------Already Liked-------");
+						}
+					}
 
 				}
 			}
@@ -349,10 +363,11 @@ public class Application extends Controller {
 	        System.out.println("Interested list size: "+users.interested.size());
 	        users.interested.add(prdid);
 	        users.update();
-	        
+	        like="disabled";
+
 			
 		}
-		return ok(product_screen.render(productid,description,price,retailer,imageurl,qrcode,name,proddetails));
+		return ok(product_screen.render(productid,description,price,retailer,imageurl,qrcode,name,proddetails,like));
 	}
 	//Sravya Reddy
 	/*public void likeFunctionPressed(String likedItem){
