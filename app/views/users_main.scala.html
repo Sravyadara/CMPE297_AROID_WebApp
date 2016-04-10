@@ -1,4 +1,4 @@
-@(categoryArray: List[String],list:List[ProductDetails])
+@(userName: String,categoryArray: List[String],list:List[ProductDetails])
 
 @main("AROID:Explore,Visualize") {
 
@@ -27,7 +27,56 @@ function redirectfunc(category)
 sessionStorage.setItem('category', category);
 window.location = '/user_products/'+category;
 } 
+
 </script>
+<script type="text/javascript">
+
+
+var cat = sessionStorage.getItem('category');
+
+
+var liked;
+	
+
+
+function prodredirectfunc(category)
+{ 
+    liked="false";
+	window.location = '/product_screen/'+cat+'/'+category+'/'+liked ;
+} 
+
+function likeFunctionPressed(productidvalue)
+{ 
+     liked="true";
+     window.location = '/product_screen/'+cat+'/'+productidvalue+'/'+liked;
+    
+}
+
+</script>
+<script type="text/javascript">
+	$(document).ready( function() {
+		$('#myCarousel').carousel({
+		  interval: 10000
+		})
+
+		$('.carousel .item').each(function(){
+		  var next = $(this).next();
+		  if (!next.length) {
+		    next = $(this).siblings(':first');
+		  }
+		  next.children(':first-child').clone().appendTo($(this));
+		  
+		  if (next.next().length>0) {
+		    next.next().children(':first-child').clone().appendTo($(this));
+		  }
+		  else {
+		  	$(this).siblings(':first').children(':first-child').clone().appendTo($(this));
+		  }
+		});
+
+	});
+</script>
+
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -39,7 +88,7 @@ window.location = '/user_products/'+category;
         <li class="active"><a href="@routes.Application.listofCategories()">CATALOG</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span>USER</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span>@userName</a></li>
         <li><a href="@routes.Application.logout()"><span class="glyphicon glyphicon-log-in"></span> SIGN OUT</a></li>
       </ul>
     </div>
@@ -60,4 +109,32 @@ window.location = '/user_products/'+category;
 </div>
 </div>
 </div><br><br>
+
+@if(list.length !=0){
+ <div class="col-md-12 text-center"><h3>Similar users also liked: </h3></div>
+ <div class="col-md-6 col-md-offset-3">
+	<div class="carousel slide" data-ride="carousel" data-type="multi" data-interval="3000" id="myCarousel" style="width:700px" >
+  		<div class="carousel-inner">
+  
+  		@for((l, index) <- list.zipWithIndex){
+                            
+    		@if(index < 1){
+        		<div class="item active" >
+            		<div class="col-md-4"><a onclick='prodredirectfunc("@l.productid")'>@l.name<img src=@l.image class="img-responsive"></a></div>
+				</div>
+                             
+        	}else{
+        		<div class="item" >
+            		<div class="col-md-4"><a onclick='prodredirectfunc("@l.productid")'>@l.name<img src=@l.image class="img-responsive"></a></div>
+            	</div>
+                             
+        	}
+    	}
+      
+	</div>
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+ </div>
+ </div>
+}
 }
