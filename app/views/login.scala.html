@@ -69,11 +69,15 @@
     
     @if( statusMessage == "failed") {
     	<br><br>
-    	<div align="center" id="failureMessage"> <p style="color:red;"> Unsuccesful attempt, Please provide valid credentials </p></div>
+    	<div align="center" id="failureMessage"> <p style="color:red;"> Unsuccessful attempt, Please provide valid credentials </p></div>
     }
     @if(statusMessage == "relogin"){
     	<br><br>
     	<div align="center" id="reloginMessage"> <p style="color:green;"> Thank you. Hope you enjoyed our service :) </p></div>
+    }
+    @if(statusMessage == "pending"){
+    	<br><br>
+    	<div align="center" id="reloginMessage"> <p style="color:green;"> Your request is yet to be approved by Administrator. </p></div>
     }
     <div class="container">
       <div class="login" >

@@ -71,6 +71,7 @@ public class Application extends Controller {
 
 		System.out.println(newUser.userName);
 		newUser.insert();
+		status = "pending";
 		return viewLogin();
 
 	}
@@ -153,7 +154,12 @@ public class Application extends Controller {
 				session("retailerName", user.retailer);
 				return showRetailerCategories();
 			}else if(user.role.equalsIgnoreCase("customer")){
-				return listofCategories();
+				if(!user.status.equalsIgnoreCase("pending")) {
+					return listofCategories();
+				}else {
+					status = "pending";
+					return viewLogin();
+				}
 			}
 
 		}else {
