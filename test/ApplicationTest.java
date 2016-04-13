@@ -1,168 +1,138 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import com.fasterxml.jackson.databind.JsonNode;
+
+import models.LoginForm;
+import models.ProductDetails;
+import models.Products;
+import models.Users;
+
+import org.jongo.Jongo;
+import org.jongo.MongoCursor;
 import org.junit.*;
 
 import play.mvc.*;
 import play.test.*;
 import play.data.DynamicForm;
+import play.data.Form;
 import play.data.validation.ValidationError;
 import play.data.validation.Constraints.RequiredValidator;
 import play.i18n.Lang;
 import play.libs.F;
 import play.libs.F.*;
 import play.twirl.api.Content;
-
 import static play.test.Helpers.*;
 import static org.junit.Assert.*;
 
 
 /**
-*
-* Simple (JUnit) tests that can call all parts of a play app.
-* If you are interested in mocking a whole application, see the wiki for more details.
-*
-*/
+ *
+ * Simple (JUnit) tests that can call all parts of a play app.
+ * If you are interested in mocking a whole application, see the wiki for more details.
+ *
+ */
 public class ApplicationTest {
 
-    @Test
-    public void simpleCheck() {
-        int a = 1 + 1;
-        assertEquals(2, a);
-    }
+	@Test
+	public void loginCheck(){
 
-    @Test
-    public void renderTemplate() {
-        Content html = views.html.index.render("Your new application is ready.");
-        assertEquals("text/html", contentType(html));
-        assertTrue(contentAsString(html).contains("Your new application is ready."));
-    }
-    
-    public void loginCheck(){
+		Helpers.running(Helpers.fakeApplication(), new Runnable() {
 
-		//String usernmae, String password
-
+			@Override
+			public void run() {
+				String failedstatus = "failed";
+				Users user = Users.findByName("susmithamenda", "retailer123");
+				if(user != null) {
+					assertNotNull(user.role);
+				}else {
+					failedstatus = "failed";
+					assertEquals(failedstatus,"failed");
+				}
+			}
+		});
 	}
 
 	public void signupCheck(){
-
-
 
 	}
 
 	@Test
 	public void ImageCatalog(){
-		
+
 		Helpers.running(Helpers.fakeApplication(), new Runnable() {
 
-	        @Override
-	        public void run() {
+			@Override
+			public void run() {
 
-	        	String id = "IKEA";
-	    		Products prod = new Products();
-	    		System.out.println("printing images");
-	    		MongoCursor<Products> cursor = prod.findall();
-	    		List<ProductDetails> details = new ArrayList<ProductDetails>();
-	    		while (cursor.hasNext()) {
-	    			List<ProductDetails> temp = cursor.next().products;
-	    			for (ProductDetails pd : temp) {
-	    				if (pd.getRetailer().equalsIgnoreCase(id)) {
-	    					System.out.println("printing images");
-	    					System.out.println(pd.getImage());
-	    					details.add(pd);
-	    				}
-	    			}
-	    		}
-	    		assertEquals(details.size(),6);
-	        }
-	    });
-		
-
-		/*List<ProductDetails> verifydetails = new ArrayList<ProductDetails>();
-		for(int i = 0; i < 5; i++){
-			verifydetails.add(new ProductsDetails("Conference Chair"),"2"
-					,"Designed to accommodate one sitting , providing support for the back."
-					,200, " https://s3-us-west-1.amazonaws.com/project295images/qr_conferencechair.jpg"
-					,"https://s3-us-west-1.amazonaws.com/project295images/conferencechairdemo.jpg"
-					,"https://s3-us-west-1.amazonaws.com/project295images/conferencechairdemo.jpg","ikea");
-			verifydetails.add(new ProductsDetails("Lorelai Sofa"),"5"
-					,"Different colors, textures and patterns have the ability to transform items like the Lorelai sofa."
-					,200, "https://s3-us-west-1.amazonaws.com/project295images/qr_conferencechair.jpg"
-					,"https://s3-us-west-1.amazonaws.com/project295images/portfolio_pic4.jpg"
-					,"https://s3-us-west-1.amazonaws.com/project295images/portfolio_pic4.jpg","ikea");
-			verifydetails.add(new ProductsDetails("Red Chair"),"6"
-					,"Fresh twist on style. Breathe new life into your space with the delightfully vibrant Honnally accent chair"
-					,800, "https://s3-us-west-1.amazonaws.com/project295images/qr_woodencube.jpg"
-					,"https://s3-us-west-1.amazonaws.com/project295images/red_chair.jpg"
-					,"https://s3-us-west-1.amazonaws.com/project295images/red_chair.jpg","ikea");
-			verifydetails.add(new ProductsDetails("Conference Chair"),"2"
-					,"Designed to accommodate one sitting , providing support for the back."
-					,200, "https://s3-us-west-1.amazonaws.com/project295images/qr_conferencechair.jpg"
-					,"https://s3-us-west-1.amazonaws.com/project295images/conferencechairdemo.jpg"
-					,"https://s3-us-west-1.amazonaws.com/project295images/conferencechairdemo.jpg","ikea");
-			verifydetails.add(new ProductsDetails("Lorelai Sofa"),"5"
-					,"Different colors, textures and patterns have the ability to transform items like the Lorelai sofa."
-					,200, "https://s3-us-west-1.amazonaws.com/project295images/qr_conferencechair.jpg"
-					,"https://s3-us-west-1.amazonaws.com/project295images/portfolio_pic4.jpg"
-					,"https://s3-us-west-1.amazonaws.com/project295images/portfolio_pic4.jpg","ikea");
-			verifydetails.add(new ProductsDetails("Red Chair"),"6"
-					,"Fresh twist on style. Breathe new life into your space with the delightfully vibrant Honnally accent chair"
-					,800, "https://s3-us-west-1.amazonaws.com/project295images/qr_woodencube.jpg"
-					,"https://s3-us-west-1.amazonaws.com/project295images/red_chair.jpg"
-					,"https://s3-us-west-1.amazonaws.com/project295images/red_chair.jpg","ikea");
-
-		}*/
-		
-
+				String id = "IKEA";
+				Products prod = new Products();
+				MongoCursor<Products> cursor = prod.findall();
+				List<ProductDetails> details = new ArrayList<ProductDetails>();
+				while (cursor.hasNext()) {
+					List<ProductDetails> temp = cursor.next().products;
+					for (ProductDetails pd : temp) {
+						assertNotNull(pd);
+					}
+				}
+			}
+		});
 	}
 
 	@Test
 	public void adminInbox(){
-		
+
 		Helpers.running(Helpers.fakeApplication(), new Runnable() {
 
-	        @Override
-	        public void run() {
+			@Override
+			public void run() {
 
-	        	Users users = new Users();
-	    		MongoCursor<Users> cursor = users.findByStatus("pending");
-	    		List<Users> userlist = new ArrayList<Users>();
-	    		while(cursor.hasNext()){
-	    			userlist.add(cursor.next());
-	    		}
-	    		assertEquals(userlist.size(),5);
-	        }
-	    });
+				Users users = new Users();
+				MongoCursor<Users> cursor =  users.findByStatus("pending");
+				List<Users> userlist = new ArrayList<Users>();
+				while(cursor.hasNext()){
+					Users user = cursor.next();
+					userlist.add(user);
+					assertNotNull(user.id);
+				}
+			}
+		});
 	}
 
-	/*public void updateUserStatus(){
+	@Test
+	public void updateUserStatus(){
 
-		String status;
-		String userName;
-		//String status,String userName
-		Users users = new Users();
-		users = Users.findById(userName);
-		System.out.println(users.lastName);
-		users.status = status;
-		users.update();
-	}*/
+		Helpers.running(Helpers.fakeApplication(), new Runnable() {
+
+			@Override
+			public void run() {
+				String userName = "sravyadara";
+				//String status,String userName
+				Users users = new Users();
+				users = Users.findById(userName);
+				assertNotNull(users);
+			}
+		});
+	}
 
 	@Test
 	public void showRetailerCategories(){
 
 		Helpers.running(Helpers.fakeApplication(), new Runnable() {
 
-	        @Override
-	        public void run() {
-	        	Products p = new Products();
-	    		// Fetching categories list
-	    		List<String> categoryArray = p.getCategories("categoryname");
-	    		assertEquals(categoryArray.size(),2);
-	        }
-	    });
+			@Override
+			public void run() {
+				Products p = new Products();
+				// Fetching categories list
+				List<String> categoryArray = p.getCategories("categoryname");
+				assertNotNull(categoryArray);
+			}
+		});
 	}
 
 	/*public void postProductFormData(){
@@ -210,78 +180,81 @@ public class ApplicationTest {
 
 	}*/
 
+	@Test
 	public void showRetailerProducts(){
 
 		Helpers.running(Helpers.fakeApplication(), new Runnable() {
 
-	        @Override
-	        public void run() {
-	        	String categoryname = "Living Room";
-	    		MongoCursor<Products> cursor = Products.findByName(categoryName);
-	    		List<ProductDetails> filteredProductDetails = new ArrayList<ProductDetails>();
-	    		while(cursor.hasNext()){
-	    			List<ProductDetails> details = cursor.next().products;
-	    			for(ProductDetails d : details) {
-	    				if(d.retailer.equalsIgnoreCase(session("retailerName"))){
-	    					filteredProductDetails.add(d);
-	    				}
-	    			}
-	    		}
-	    		assertEquals(filteredProductDetails.size(),0);
-	        }
-	    });
+			@Override
+			public void run() {
+				String categoryName = "Living Room";
+				MongoCursor<Products> cursor = Products.findByName(categoryName);
+				List<ProductDetails> filteredProductDetails = new ArrayList<ProductDetails>();
+				while(cursor.hasNext()){
+					List<ProductDetails> details = cursor.next().products;
+					for(ProductDetails d : details) {
+						assertNotNull(d.retailer);
+					}
+				}
+			}
+		});
 	}
-	/*
 
+	@Test
 	public void listofCategories(){
 
-		Products p = new Products();
-		System.out.println("Printng number of rows in products collections : " + p.getCount() + " and " + p.findall().count() );
-		MongoCursor<Products> mongoCursor = p.findall();
-		List<String> categoryArray = p.getCategories("categoryname");
-		System.out.println("Printing Distinct values : " + p.getCategories("categoryname").size());
-		for(String s : p.getCategories("categoryname")) {
-			System.out.println("Category : "+ s);
-		}
-
-	}
-
-	
-	
-	
-	public void listofProducts(){
-		
 		Helpers.running(Helpers.fakeApplication(), new Runnable() {
 
-	        @Override
-	        public void run() {
-	        	
-	        	String categoryname;
-	    		Products p = new Products();
-	    		MongoCursor<Products> m = p.findByName(categoryname);
-	    		List<ProductDetails> proddetails = new ArrayList<ProductDetails>();
-	    		while(m.hasNext()){
-	    			List<ProductDetails> productDetails  = m.next().products;
-	    			for(ProductDetails pd : productDetails){
-	    				String name = pd.getName();
-	    				String url= pd.getQrcode();
-	    				String prdid=pd.getProductid();
-	    				proddetails.add(pd);
-	    			}
-	    		}
-	    		assertEquals(proddetails.size(),0);
-	        }
-	    });
-		
-		
+			@Override
+			public void run() {
+				Products p = new Products();
+				MongoCursor<Products> mongoCursor = p.findall();
+				List<String> categoryList = p.getCategories("categoryname");
+				for(String s : categoryList) {
+					assertNotNull(s);
+				}
+
+			}
+		});
+	}
 
 
-	}/*
 
+	@Test
+	public void listofProducts(){
+
+		//user_products/Kitchen
+		Helpers.running(Helpers.fakeApplication(), new Runnable() {
+
+			@Override
+			public void run() {
+
+				String categoryname = "Kitchen";
+				Products p = new Products();
+				MongoCursor<Products> m = p.findByName(categoryname);
+				List<ProductDetails> proddetails = new ArrayList<ProductDetails>();
+				while(m.hasNext()){
+					List<ProductDetails> productDetails  = m.next().products;
+					for(ProductDetails pd : productDetails){
+						String name = pd.getName();
+						String url= pd.getQrcode();
+						String prdid=pd.getProductid();
+						proddetails.add(pd);
+						assertNotNull(pd);
+					}
+				}
+			}
+		});
+	}
+
+	@Test
 	public void productdetailsfunc(){
 
-		String categoryname,;
-		String prdid;
+		//Kitchen/k-1/false
+
+		String categoryName = "Kitchen";
+		String prdid = "k-1";
+		String liked="false";
 
 		String retailer="";
 		String description="";
@@ -289,45 +262,63 @@ public class ApplicationTest {
 		String imageurl= "";
 		String qrcode="";
 		String name="";
-
+		String type="";//---for similar items
+		String productid="";
+		String like="visible";
 		Products p = new Products();
-		MongoCursor<Products> m = p.findByName(categoryname);
-		List<String> productname = new ArrayList<String>();
+		MongoCursor<Products> m = p.findByName(categoryName);
 		while(m.hasNext()){
 
 			List<ProductDetails> prodDetails  = m.next().products;
+
 			for(ProductDetails pd : prodDetails){
-				//System.out.println("Category Name : " + categoryname);
-				//System.out.println("Products ide : " + prdid);
+				assertNotNull(pd);
 				if(pd.getProductid().equalsIgnoreCase(prdid))
 				{ 	
-					retailer = pd.getRetailer();
-					description = pd.getDescription();
-					price = Integer.toString(pd.getPrice());
-					imageurl= pd.getImage();
-					qrcode= pd.getQrcode();
-					name = pd.getName();
-
-					String message = 	description +"/"+ price +"/"+ retailer;
-					System.out.println("Message : " + message);
+					String username="sravyadara";
+					Users users = new Users();
+					users = Users.findById(username);
+					List<String> interestedItems = users.interested;
+					for(String likeItem:interestedItems){
+						assertNotNull(likeItem);
+					}
 
 				}
 			}
 		}
+
+		Products p1 = new Products();
+		MongoCursor<Products> m1 = (MongoCursor<Products>) p1.findByName(categoryName);
+		while(m1.hasNext()){
+
+			List<ProductDetails> productDetails1  = m1.next().products;
+			for(ProductDetails pd : productDetails1){
+				assertNotNull(pd);
+			}
+		}
+		if(liked.equalsIgnoreCase("true")){
+			String username="sravyadara";
+			Users users = new Users();
+			users = Users.findById(username);
+			assertNotNull(users.interested);
+		}
 	}
 
+	@Test
 	public void searchfunc(){
 
-		String categoryname;
-		String searchvalue;
+		//Kitchen/spoon
+		String categoryName= "Kitchen";
+		String searchvalue = "spoon";
 
 		List<ProductDetails> searchdetails = new ArrayList<ProductDetails>();
 
 		Products p = new Products();
-		MongoCursor<Products> m = p.findByName(categoryname);
+		MongoCursor<Products> m = p.findByName(categoryName);
 		while(m.hasNext()){
 			List<ProductDetails> prodDetails  = m.next().products;
 			for(ProductDetails pd : prodDetails){
+				assertNotNull(pd);
 				String thisName = pd.getName();
 				String thisDesc = pd.getDescription();
 				String thisRet = pd.getRetailer();
@@ -340,7 +331,54 @@ public class ApplicationTest {
 			}
 
 		}
-	}*/
+	}
+
+	@Test
+	public void getRecommendations() {
+		String loggedUser = "sravyadara";
+		Users otherUsers = new Users();
+		Users currentUser = new Users();
+		currentUser = Users.findById(loggedUser);
+		MongoCursor<Users> othersResult = otherUsers.findOtherUsers(loggedUser);
+		ArrayList<String> currentUserInterested = currentUser.interested;
+		Set<String> recommendationSet = new HashSet<String>();
+
+		assertNotNull(otherUsers);
+		while(othersResult.hasNext()) {
+			ArrayList<String> othersInterested = othersResult.next().interested;
+			ArrayList<String> tempCurrentUserInterested = new ArrayList<String>(currentUserInterested);
+			assertNotNull(othersInterested);
+			assertNotNull(tempCurrentUserInterested);
+			if( (othersInterested.size() > 0) && (findMatchPercentage(tempCurrentUserInterested, othersInterested) > 30) ) {
+				//System.out.println("Calling for user : " + othersResult.next().userName);
+				recommendationSet.addAll(othersInterested);
+			}
+		}
+
+		recommendationSet.removeAll(currentUserInterested);
+		Iterator iterator = recommendationSet.iterator();
+		List<ProductDetails> productDetailsArray = new ArrayList<ProductDetails>();
+		assertNotNull(iterator);
+		while(iterator.hasNext()) {
+			String pid = (String) iterator.next();
+			Iterable<Products> rsi = Products.findProduct(pid);
+			assertNotNull(rsi);
+			while(rsi.iterator().hasNext()) {
+				Products pd = rsi.iterator().next();
+				productDetailsArray.add(pd.products.get(0));
+			}
+		}
+	}
+
+	public int findMatchPercentage(ArrayList<String> c, ArrayList<String> o) {
+		int initialSize = c.size();
+		c.retainAll(o);
+		if(c.size() > 0) {
+			int matchPercentage = (int) (100 * (c.size() * 1.0 / initialSize ));
+			return matchPercentage; 
+		}
+		return 0;
+	}
 
 
 
