@@ -32,17 +32,26 @@ window.location = '/user_products/'+category;
 <script type="text/javascript">
 
 
-var cat = sessionStorage.getItem('category');
+//var cat = sessionStorage.getItem('category');
 
 
 var liked;
 	
 
 
-function prodredirectfunc(category)
+function prodredirectfunc(proid)
 { 
     liked="false";
-	window.location = '/product_screen/'+cat+'/'+category+'/'+liked ;
+    var splitValue = proid.split("-")[0];
+    
+    var categoryValue = "";
+    if(splitValue == 'l') {
+    	categoryValue = "LivingRoom";
+    }else if(splitValue == 'k') {
+    	categoryValue = "Kitchen";
+    }
+    
+	window.location = '/product_screen/'+categoryValue+'/'+proid+'/'+liked ;
 } 
 
 function likeFunctionPressed(productidvalue)

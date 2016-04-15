@@ -53,8 +53,8 @@ public class S3Handler {
 	public String uploadImageFile(File file, String key) {
 		String s = "";
 		try{
-		s3.putObject(new PutObjectRequest("ramyakysamplebucket",key, file ).withCannedAcl(CannedAccessControlList.PublicRead));
-		s = "https://ramyakysamplebucket.s3.amazonaws.com/" + key;
+		s3.putObject(new PutObjectRequest("project295images",key, file ).withCannedAcl(CannedAccessControlList.PublicRead));
+		s = "https://project295images.s3.amazonaws.com/" + key;
 		}catch (AmazonServiceException ase) {
             System.out.println("Caught an AmazonServiceException, which " +
             		"means your request made it " +

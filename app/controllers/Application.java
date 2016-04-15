@@ -226,11 +226,10 @@ public class Application extends Controller {
 			String wt3COntentType = fpwt3.getContentType();
 			qrfile = fpqr.getFile();
 			imagefile = fpwt3.getFile();
-			/*S3Handler s3handler = new S3Handler();
+			S3Handler s3handler = new S3Handler();
 			qrUrl = s3handler.uploadImageFile(qrfile, qrfileName);
-			imageUrl = s3handler.uploadImageFile(imagefile, imagefileName);*/
-			qrUrl = "";
-			imageUrl = "";
+			imageUrl = s3handler.uploadImageFile(imagefile, imagefileName);
+			
 			System.out.println("Printing qr url : " + qrUrl);
 			System.out.println("Printing qr url : " + imageUrl);
 
@@ -391,6 +390,7 @@ public class Application extends Controller {
 
 					System.out.println(" Inside carousal function ");
 					if((pd.getType().equalsIgnoreCase(type)) && !pd.getProductid().equalsIgnoreCase(prdid)){
+						
 						proddetails.add(pd);
 						System.out.println(" Inside carousal if condition ");
 						System.out.print(" product type: " + pd.type + "product ID: " +pd.productid);
