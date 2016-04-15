@@ -16,7 +16,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-   <link rel="stylesheet" media="all" href="css/main.css">
+   
   <style>
   .panel-default > .panel-heading {
   color: #fff;
@@ -152,7 +152,7 @@ $(document).ready( function() {
           </div> 
           </div>
           @if(list.length !=0){
- <div class="col-md-12 text-center"><h3>Sponsored Products Related to This Item</h3></div>
+ <div class="col-md-12 text-center"><h3>Sponsored Products Related to This Item </h3></div>
  <div class="col-md-6 col-md-offset-3">
 <div class="carousel slide" data-ride="carousel" data-type="multi" data-interval="3000" id="myCarousel" style="width:700px" >
   <div class="carousel-inner">
@@ -162,15 +162,15 @@ $(document).ready( function() {
   
   @for((l, index) <- list.zipWithIndex){
                             
-                            @if(index < 1){
+                            @if(index == 0){
                             <div class="item active" >
-                                <div class="col-md-4"><a onclick='prodredirectfunc("@l.productid")'>@l.name<img src=@l.image class="img-responsive"></a></div>
+                                <div class="col-md-4">@index<a onclick='prodredirectfunc("@l.productid")'>@l.name<img src=@l.image class="img-responsive"></a></div>
                                
                              </div>
                              
                              }else{
                                <div class="item" >
-                                <div class="col-md-4"><a onclick='prodredirectfunc("@l.productid")'>@l.name<img src=@l.image class="img-responsive"></a></div>
+                                <div class="col-md-4">@index<a onclick='prodredirectfunc("@l.productid")'>@l.name<img src=@l.image class="img-responsive"></a></div>
                                
                              </div>
                              
